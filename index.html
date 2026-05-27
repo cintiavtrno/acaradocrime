@@ -35,13 +35,12 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 .ocorrencia-sq:hover{transform:scale(1.5);z-index:10}
 .ocorrencia-sq.no-link{cursor:default}
 
-.frag-tooltip{display:none;position:absolute;z-index:200;width:300px;background:#faf6ee;border:1.5px solid #2a1a08;padding:0.9rem;font-size:0.7rem;line-height:1.6;box-shadow:3px 3px 0 rgba(0,0,0,0.15);top:28px;left:0;pointer-events:none}
-.frag-tooltip.right{left:auto;right:0}
+.frag-tooltip{display:none;position:fixed;z-index:200;width:300px;background:#faf6ee;border:1.5px solid #2a1a08;padding:0.9rem;font-size:0.7rem;line-height:1.6;box-shadow:3px 3px 0 rgba(0,0,0,0.15);pointer-events:none}
 .frag-tooltip-meta{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;opacity:0.5;margin-bottom:0.4rem}
 .frag-tooltip-text{font-family:'Special Elite',serif;color:#2a1a08;margin-bottom:0.4rem}
 .frag-tooltip-racial{font-family:'Playfair Display',serif;font-size:0.55rem;font-style:italic;opacity:0.6;border-top:1px solid #d0c0a0;padding-top:0.4rem}
 .frag-tooltip-link{font-family:'Playfair Display',serif;font-size:0.55rem;color:#5a3a10;margin-top:0.4rem;border-top:1px solid #d0c0a0;padding-top:0.4rem}
-.ocorrencia-sq:hover .frag-tooltip{display:block}
+/* tooltip shown via JS */
 
 .corpo-analise{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-top:0.5rem}
 @media(max-width:600px){.corpo-analise{grid-template-columns:1fr}}
@@ -97,9 +96,13 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
         <p class="analise-texto">
           <em>"Cara de bandido"</em> é um sintagma fisionômico. Antes de ser jargão policial, antes de ser mídia, era frase cotidiana — a crença de que o rosto carrega a culpa. Uma herança da frenologia e da criminologia positivista do século XIX, que acreditava poder ler o crime nas feições.
           <br><br>
-          Este ensaio acompanha a sedimentação semântica do jargão na imprensa brasileira entre 1980 e 2019. A metodologia: busca exata por "cara de bandido" no acervo da Hemeroteca Digital Brasileira. O argumento: a expressão não nasce racializada — ela <em>vai sendo</em> racializada, estrato por estrato.
+          A ideia deste mapeamento nasceu de uma pergunta simples: quando a expressão passou a ter cor? Não se tratava de saber se o jargão era racista — isso parecia dado —, mas de tentar rastrear <em>quando e como</em> a imprensa foi ancorando a expressão a corpos específicos. A Hemeroteca Digital Brasileira, com seu acervo digitalizado e sistema de busca por OCR, tornou possível uma resposta documental.
           <br><br>
-          Cada quadrado abaixo é uma matéria. Passe o mouse para ler o contexto e acessar o documento original na Hemeroteca.
+          A busca foi feita pela expressão exata, entre aspas: <em>"cara de bandido"</em>. O critério não é arbitrário — a preposição <em>de</em> no português funciona como operador de atribuição essencial: dizer que alguém <em>tem cara de bandido</em> é diferente de dizer que parece um, ou que lembra. O <em>de</em> marca pertencimento, como em "cara de criança", "cara de safado", "cara de santo". Sem ele, a expressão perde o que ela tem de mais preciso: a afirmação de que a face já é o veredicto.
+          <br><br>
+          A plataforma retornou algumas ocorrências a mais do que as aqui registradas. Essas foram descartadas após leitura: continham os termos separados ou em construções onde o sintagma não se formava. Apenas as ocorrências com a expressão exata foram consideradas.
+          <br><br>
+          O que se lê abaixo são fragmentos. Cada quadrado é uma matéria. O conjunto <em>sugere</em> um percurso — não prova nada de forma definitiva, mas aponta para uma sedimentação.
         </p>
       </div>
       <div class="lav-zona">
@@ -129,11 +132,11 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo">Campo semântico</p>
         <p class="analise-texto">
-          Predomínio do uso <em>descritivo genérico</em> — fisionomia considerada ameaçadora — e de apropriações estético-culturais associadas à rebeldia contracultural do rock. A expressão circula como descrição fenomenológica, não como categoria de suspeita policial.
+          O que o corpus dos anos 1980 aponta é um predomínio do uso <em>descritivo genérico</em> — fisionomia considerada ameaçadora — e de apropriações estético-culturais associadas à rebeldia contracultural do rock. A expressão parece circular como descrição fenomenológica, ainda não como categoria de suspeita policial estruturada.
           <br><br>
-          A <em>fricção de classe</em> é o conflito central: o jargão choca-se com o status socioeconômico do indivíduo. O vendedor de armas que diz que a pessoa "tem cara de bandido mas apresenta documentos de engenheiro ou médico" revela que o operador é fisionômico-classista — e a apresentação de capital cultural o neutraliza.
+          A <em>fricção de classe</em> surge como conflito central: o jargão se choca com o status socioeconômico do indivíduo. O vendedor de armas que menciona que a pessoa "tem cara de bandido mas apresenta documentos de engenheiro ou médico" pode sugerir que o operador é fisionômico-classista — e que a apresentação de capital cultural o neutraliza.
           <br><br>
-          O <em>marcador de raça permanece ausente</em> da cobertura jornalística.
+          O <em>marcador de raça parece ausente</em> da cobertura jornalística nesse período — ao menos de forma nomeada.
         </p>
       </div>
       <div class="lav-zona">
@@ -164,11 +167,11 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo">Campo semântico</p>
         <p class="analise-texto">
-          Emergência de uma <em>estetização urbana da criminalidade</em>. A expressão migra do contexto rural para as grandes cidades, incorporando noções de crueldade e esperteza atreladas ao espaço urbano.
+          Os anos 1990 parecem marcar uma <em>estetização urbana da criminalidade</em>. A expressão começa a migrar do contexto rural para as grandes cidades, incorporando noções de crueldade e esperteza atreladas ao espaço urbano.
           <br><br>
-          Racialização <em>estruturalmente implícita</em>, mas ainda não nomeada. O corpo que recebe o jargão começa a ter endereço — a periferia, a favela —, mas o marcador racial não aparece escrito.
+          A racialização ainda não é nomeada, mas pode ser lida como <em>estruturalmente implícita</em>. O corpo que recebe o jargão começa a ter endereço — a periferia, a favela — sem que o marcador racial apareça escrito.
           <br><br>
-          Surgimento da <em>contestação popular</em>: o camelô que pergunta ao guarda-rapa "pra ser bandido precisava ter cara?" inaugura a disputa semântica — sujeitos periféricos questionando publicamente a validade da expressão.
+          O surgimento da <em>contestação popular</em> é um dado que chama atenção: o camelô que pergunta ao guarda-rapa "pra ser bandido precisava ter cara?" inaugura uma disputa semântica — sujeitos periféricos questionando publicamente a validade da expressão.
         </p>
       </div>
       <div class="lav-zona">
@@ -203,11 +206,11 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo" style="opacity:0.6">Campo semântico</p>
         <p class="analise-texto" style="color:#f0d090">
-          <em>Consolidação da literalização visual racializada</em>. Primeira nomeação racial explícita e institucionalizada no corpus: moradores denunciam o modus operandi do BOPE — "maioria negra" — como critério de triagem policial em festa junina na favela.
+          Os anos 2000 parecem apontar para uma <em>consolidação da literalização visual racializada</em>. A primeira nomeação racial explícita do corpus aparece aqui: moradores denunciam o modus operandi do BOPE — "maioria negra" — como critério de triagem policial em festa junina na favela.
           <br><br>
-          <em>Territorialização do estigma</em>: a favela e a violência urbana ancoram definitivamente a expressão em corpos negros na cobertura jornalística — seja para justificar ações de coerção ou para naturalizar o medo coletivo.
+          O que o corpus sugere é um processo de <em>territorialização do estigma</em>: a favela e a violência urbana parecem ancorar cada vez mais a expressão em corpos negros na cobertura jornalística — seja para justificar ações de coerção ou para naturalizar o medo coletivo.
           <br><br>
-          Aparece também o capital atlético: o jogador negro Alessandro amedronta os adversários <em>"com sua cara de bandido de filme do velho oeste"</em> — o corpo ameaçador racializado recodificado como vantagem esportiva.
+          O caso Alessandro pode apontar para algo curioso: o corpo ameaçador racializado recodificado como vantagem esportiva — <em>"com sua cara de bandido de filme do velho oeste"</em> — o que sugere que o estigma permanece, mas seu sinal é invertido na narrativa atlética.
         </p>
       </div>
       <div class="lav-zona">
@@ -239,11 +242,11 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo" style="color:#e0c090;opacity:0.5">Campo semântico</p>
         <p class="analise-texto" style="color:#e0c090">
-          O universo semântico está <em>plenamente sedimentado</em>. O jargão circula sob a matriz racial de forma naturalizada, transbordando o campo policial para outras esferas: mídia de entretenimento, colunismo social.
+          O corpus dos anos 2010 sugere que o universo semântico já se encontra <em>plenamente sedimentado</em>. O jargão parece circular sob a matriz racial de forma naturalizada, transbordando o campo policial para outras esferas: mídia de entretenimento, colunismo social.
           <br><br>
-          O caso Paolo Guerrero demonstra que a expressão opera como <em>categoria estética de alteridade genérica</em> — não especificamente negra, mas não-branco-europeu. O jogador ativa isso pela sua latinidade andina, pela aparência "exótica" para o padrão midiático brasileiro dominante.
+          O caso Paolo Guerrero aponta para algo relevante: a expressão pode operar como <em>categoria estética de alteridade genérica</em> — não especificamente negra, mas não-branco-europeu. O jogador ativa isso pela sua latinidade andina, pela aparência "exótica" para o padrão midiático brasileiro dominante.
           <br><br>
-          A expressão <em>não colapsa em "negro" de forma exclusiva</em>: opera sobre um espectro de não-branquitude, com a negritude sendo o polo mais intensamente marcado, mas não o único.
+          O que o conjunto sugere é que a expressão <em>não colapsa em "negro" de forma exclusiva</em>: parece operar sobre um espectro de não-branquitude, com a negritude sendo o polo mais intensamente marcado, mas não o único.
         </p>
       </div>
       <div class="lav-zona">
@@ -268,7 +271,15 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 <div class="rodape">
   <div class="rodape-titulo">cara de bandido</div>
   <p class="rodape-texto">
-    Metodologia: busca exata por "cara de bandido" no acervo da Hemeroteca Digital Brasileira. Corpus: Jornal do Brasil (RJ) e A Tribuna (SP). Arco temporal: 1880–2019, organizado por décadas. Análise quantitativa seguida de análise qualitativa de deslocamento semântico e ideológico.
+    Este mapeamento nasceu de uma pergunta: quando e como a imprensa brasileira foi ancorando a expressão "cara de bandido" a corpos específicos? Para respondê-la de forma documental, recorreu-se ao acervo da Hemeroteca Digital Brasileira, plataforma gerida pela Fundação Biblioteca Nacional, cujas ferramentas de busca por OCR permitem o rastreamento de expressões na imprensa histórica com precisão textual.
+    <br><br>
+    O corpus foi constituído por dois periódicos de relevância e capilaridade editorial: o Jornal do Brasil (RJ) e A Tribuna (SP). O recorte temporal foi determinado pela disponibilidade do acervo em cada periódico — 1980 a 2019 —, organizado por décadas.
+    <br><br>
+    A busca foi realizada pela expressão exata entre aspas: <em>"cara de bandido"</em>. O critério importa: a preposição <em>de</em> no português funciona como operador de atribuição essencial — ela afirma pertencimento, não semelhança. "Cara de bandido" é diferente de "cara que parece de bandido". O <em>de</em> é o que torna a expressão um veredicto fisionômico. Sem ele, o sintagma perde sua força atributiva.
+    <br><br>
+    A plataforma retornou algumas ocorrências além das aqui mapeadas. Após leitura individual, essas foram descartadas: continham os termos separados ou em construções onde a expressão exata não se formava. Apenas as ocorrências com o sintagma íntegro foram incluídas.
+    <br><br>
+    Este levantamento não pretende ser exaustivo nem conclusivo. O que os fragmentos sugerem é um percurso — um acúmulo de sentido que pode apontar para uma sedimentação semântica ao longo do tempo.
     <br><br>
     Referências visuais: Chris Ware × Warja Lavater — planta-baixa como narrativa, o pictograma como sintaxe emocional, a forma carrega o juízo moral antes de o texto nomear.
     <br><br>
@@ -282,6 +293,19 @@ window.addEventListener('scroll',()=>{
   const pct=(h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight);
   document.getElementById('sd').style.width=(pct*100)+'%';
 });
+
+function posTooltip(tt,e){
+  const margin=12;
+  const tw=300;
+  const th=tt.offsetHeight||180;
+  let x=e.clientX+margin;
+  let y=e.clientY+margin;
+  if(x+tw>window.innerWidth-margin){x=e.clientX-tw-margin}
+  if(y+th>window.innerHeight-margin){y=e.clientY-th-margin}
+  if(y<margin){y=margin}
+  tt.style.left=x+'px';
+  tt.style.top=y+'px';
+}
 
 const dados = {
   '1980': {
@@ -345,12 +369,19 @@ Object.keys(dados).forEach(dec=>{
     el.style.borderColor=cor.borda;
     if(item.racial.startsWith('⚑')){el.style.boxShadow='0 0 0 2px #ff2000'}
     const tt=document.createElement('div');
-    const isRight=i>=(itens.length-3);
-    tt.className='frag-tooltip'+(isRight?' right':'');
+    tt.className='frag-tooltip';
     tt.innerHTML=`<div class="frag-tooltip-meta">${item.meta}</div><div class="frag-tooltip-text">${item.texto}</div><div class="frag-tooltip-racial">${item.racial}</div><div class="frag-tooltip-link">↗ clique para abrir o original na Hemeroteca Digital</div>`;
-    el.appendChild(tt);
-    el.addEventListener('mouseenter',()=>{el.style.background=cor.hover});
-    el.addEventListener('mouseleave',()=>{el.style.background=cor.fill});
+    document.body.appendChild(tt);
+    el.addEventListener('mouseenter',(e)=>{
+      el.style.background=cor.hover;
+      tt.style.display='block';
+      posTooltip(tt,e);
+    });
+    el.addEventListener('mousemove',(e)=>{posTooltip(tt,e)});
+    el.addEventListener('mouseleave',()=>{
+      el.style.background=cor.fill;
+      tt.style.display='none';
+    });
     grid.appendChild(el);
   });
 });
