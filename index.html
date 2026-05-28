@@ -84,7 +84,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   right:70px;
   top:50%;
   transform:translateY(-50%);
-  width:230px;
+  width:155px;
   z-index:35;
   background:rgba(245,240,232,0.88);
   backdrop-filter:blur(6px);
@@ -94,7 +94,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   display:none;/* mostra apenas em telas largas */
   pointer-events:none;
 }
-@media(min-width:1480px){
+@media(min-width:1366px){
   #msv-wrap{display:block}
   .lav-zona{display:none!important}
   .corpo-analise{grid-template-columns:1fr!important}
@@ -197,6 +197,45 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 .rodape{background:#1a1208;color:#c0a878;padding:3rem 2rem;text-align:center}
 .rodape-titulo{font-family:'UnifrakturMaguntia',serif;font-size:2.5rem;margin-bottom:1rem;opacity:0.4}
 .rodape-texto{font-family:'Playfair Display',serif;font-size:0.7rem;line-height:1.9;font-style:italic;max-width:500px;margin:0 auto;opacity:0.6}
+@media(max-width:768px){
+  #kw{display:none}
+  #rp{display:none}
+  #msv-wrap{display:none}
+
+  .obra-header{padding:2rem 1.2rem 1.5rem}
+  .obra-titulo{font-size:clamp(2.2rem,11vw,4rem)}
+  .obra-subtitulo{font-size:0.8rem}
+  .obra-instrucao{font-size:0.55rem;letter-spacing:0.15em}
+  .obra-pretitulo{font-size:0.55rem;letter-spacing:0.2em}
+
+  .estrato-inner{padding:1.8rem 1.2rem 2.2rem}
+  .termo-display{font-size:clamp(1.6rem,8vw,3rem);margin-bottom:1rem}
+  .geo-nota{font-size:0.65rem;text-align:left}
+  .estrato-epoch{font-size:0.55rem}
+
+  .corpo-analise{grid-template-columns:1fr;gap:1.2rem}
+  .lav-zona{display:none}
+  .analise-texto{font-size:0.88rem;line-height:1.72}
+  .analise-titulo{font-size:0.55rem}
+
+  .ocorrencia-sq{width:28px;height:28px}
+  .ocorrencias-grid{gap:5px}
+  .ocorrencias-label{font-size:0.5rem}
+
+  .frag-tooltip{width:calc(100vw - 32px);max-width:300px;font-size:0.65rem}
+  .frag-tooltip-meta{font-size:0.5rem}
+
+  .rodape{padding:2rem 1.2rem}
+  .rodape-titulo{font-size:1.8rem}
+  .rodape-texto{font-size:0.65rem}
+}
+
+@media(max-width:420px){
+  .obra-titulo{font-size:clamp(1.9rem,9vw,3rem)}
+  .estrato-inner{padding:1.4rem 1rem 1.8rem}
+  .analise-texto{font-size:0.82rem}
+  .ocorrencia-sq{width:26px;height:26px}
+}
 </style>
 </head>
 <body>
