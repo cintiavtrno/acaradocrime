@@ -94,7 +94,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   display:none;/* mostra apenas em telas largas */
   pointer-events:none;
 }
-@media(min-width:1420px){
+@media(min-width:1240px){
   #msv-wrap{display:block}
   .lav-zona{display:none!important}
   .corpo-analise{grid-template-columns:1fr!important}
@@ -155,7 +155,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 .e2010{background:#7a3810;border-color:#3a1005;color:#f0e0c0}
 
 .estrato-epoch{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;opacity:0.5;margin-bottom:0.3rem}
-.geo-nota{font-family:'Playfair Display',serif;font-size:0.6rem;font-style:italic;opacity:0.35;text-align:right;margin-bottom:1.5rem}
+.geo-nota{font-family:'Playfair Display',serif;font-size:0.74rem;font-style:italic;opacity:0.35;text-align:right;margin-bottom:1.5rem}
 
 .ocorrencias-label{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.5;margin-bottom:0.6rem}
 .ocorrencias-grid{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:2rem}
@@ -172,10 +172,10 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 @media(max-width:600px){.corpo-analise{grid-template-columns:1fr}}
 
 .lav-zona{display:flex;flex-direction:column;align-items:center}
-.lav-label{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.4;margin-top:0.8rem;text-align:center}
+.lav-zona svg{width:310px;height:auto}.lav-label{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.4;margin-top:0.8rem;text-align:center}
 
 .analise-titulo{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.5;margin-bottom:0.6rem}
-.analise-texto{font-size:0.8rem;line-height:1.75}
+.analise-texto{font-size:0.95rem;line-height:1.82}
 .analise-texto em{font-style:normal;font-weight:700;border-bottom:1px solid currentColor}
 
 .termo-display{font-size:clamp(2rem,6vw,4.5rem);line-height:1;margin-bottom:1.5rem;opacity:0.9}
@@ -222,7 +222,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 ══════════════════════════════════════ -->
 <div id="msv-wrap" aria-hidden="true">
   <p id="msv-era-badge">pré-corpus</p>
-  <svg id="msv" viewBox="0 0 175 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+  <svg id="msv" viewBox="0 0 175 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;overflow:visible">
 
     <!-- Estado 0: intro / neutro -->
     <g id="sv0" class="sv-state active">
@@ -230,7 +230,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <line x1="88" y1="23" x2="88" y2="157" stroke="#4a3010" stroke-width="0.5" opacity="0.18" stroke-dasharray="3,3"/>
       <line x1="32" y1="90" x2="144" y2="90" stroke="#4a3010" stroke-width="0.5" opacity="0.18" stroke-dasharray="3,3"/>
       <circle cx="88" cy="90" r="5" fill="none" stroke="#4a3010" stroke-width="1" opacity="0.4"/>
-      <text x="88" y="178" text-anchor="middle" font-family="Playfair Display,serif" font-size="7.5" fill="#4a3010" opacity="0.38" font-style="italic">a face como arquivo do crime</text>
+      <text x="88" y="178" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#4a3010" opacity="0.38" font-style="italic">a face como arquivo do crime</text>
     </g>
 
     <!-- Estado 1: 1980 -->
@@ -275,22 +275,22 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <ellipse cx="109" cy="74" rx="9" ry="5.5" fill="#f0c090" opacity="0.18"/>
       <path d="M69 100 Q88 113 107 100" fill="none" stroke="#f0c090" stroke-width="1" opacity="0.16"/>
       <text x="88" y="93" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="12" fill="#c03010" letter-spacing="2.5" opacity="0.95">MAIORIA NEGRA</text>
-      <text x="88" y="172" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#e0a878" opacity="0.52" font-style="italic">1ª nomeação racial explícita</text>
-      <text x="88" y="185" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#e0a878" opacity="0.52" font-style="italic">BOPE · favela</text>
+      <text x="88" y="172" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#e0a878" opacity="0.52" font-style="italic">1ª nomeação racial explícita</text>
+      <text x="88" y="185" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#e0a878" opacity="0.52" font-style="italic">BOPE · favela</text>
     </g>
 
     <!-- Estado 4: 2010 -->
     <g id="sv4" class="sv-state">
       <circle cx="35" cy="88" r="33" fill="#1a0505" stroke="#ff3010" stroke-width="2.5"/>
       <text x="35" y="86" text-anchor="middle" font-family="Oswald,sans-serif" font-size="8" fill="#ff5030" letter-spacing="1">NEGRO</text>
-      <text x="35" y="98" text-anchor="middle" font-family="Oswald,sans-serif" font-size="6.5" fill="#cc3010" opacity="0.85">polo</text>
+      <text x="35" y="98" text-anchor="middle" font-family="Oswald,sans-serif" font-size="9.5" fill="#cc3010" opacity="0.85">polo</text>
       <circle cx="98" cy="88" r="24" fill="#200808" stroke="#c04020" stroke-width="1.8"/>
       <text x="98" y="92" text-anchor="middle" font-family="Oswald,sans-serif" font-size="8.5" fill="#e05030">latino</text>
       <circle cx="148" cy="88" r="15" fill="#180606" stroke="#904020" stroke-width="1.2"/>
       <text x="148" y="92" text-anchor="middle" font-family="Oswald,sans-serif" font-size="7.5" fill="#b04020">andino</text>
       <circle cx="171" cy="88" r="7" fill="none" stroke="#604030" stroke-width="0.7" stroke-dasharray="2,2" opacity="0.36"/>
-      <text x="88" y="138" text-anchor="middle" font-family="Playfair Display,serif" font-size="6.5" fill="#5a1808" opacity="0.48" font-style="italic">← polo mais marcado · menos →</text>
-      <text x="88" y="175" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#5a1808" opacity="0.36">espectro de não-branquitude</text>
+      <text x="88" y="138" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#5a1808" opacity="0.48" font-style="italic">← polo mais marcado · menos →</text>
+      <text x="88" y="175" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#5a1808" opacity="0.36">espectro de não-branquitude</text>
     </g>
   </svg>
   <p id="msv-label">forma neutra · sem marcador</p>
