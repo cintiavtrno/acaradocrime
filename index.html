@@ -228,6 +228,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   .rodape{padding:2rem 1.2rem}
   .rodape-titulo{font-size:1.8rem}
   .rodape-texto{font-size:0.65rem}
+  .frag-tooltip{position:fixed;bottom:16px;top:auto;left:16px;right:16px;width:auto;max-width:none}
 }
 
 @media(max-width:420px){
@@ -561,7 +562,9 @@ window.addEventListener('scroll', () => {
 /* ══════════════════════════════════════════════
    TOOLTIP
 ══════════════════════════════════════════════ */
+let activeTooltip = null;
 function posTooltip(tt, e) {
+  if (window.innerWidth <= 768) return;
   const margin = 12, tw = 300;
   const th = tt.offsetHeight || 180;
   let x = e.clientX + margin, y = e.clientY + margin;
@@ -646,6 +649,12 @@ Object.keys(dados).forEach(dec => {
     el.addEventListener('mouseenter', (e) => { el.style.background = cor.hover; tt.style.display = 'block'; posTooltip(tt, e); });
     el.addEventListener('mousemove', (e) => { posTooltip(tt, e); });
     el.addEventListener('mouseleave', () => { el.style.background = cor.fill; tt.style.display = 'none'; });
+    el.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      if (activeTooltip && activeTooltip !== tt) { activeTooltip.style.display = 'none'; }
+      if (tt.style.display === 'block') { tt.style.display = 'none'; activeTooltip = null; }
+      else { tt.style.display = 'block'; activeTooltip = tt; }
+    }, { passive: false });
     grid.appendChild(el);
   });
 });
@@ -802,9 +811,19 @@ sectionIds.forEach(id => {
   if (el) obs.observe(el);
 });
 
+document.addEventListener('touchstart', (e) => {
+  if (activeTooltip && !e.target.closest('.ocorrencia-sq') && !e.target.closest('.frag-tooltip')) {
+    activeTooltip.style.display = 'none';
+    activeTooltip = null;
+  }
+});
 // estado inicial
 applyKwState(0);
 activateSvState(0);
+if ('ontouchstart' in window) {
+  const instr = document.querySelector('.obra-instrucao');
+  if (instr) instr.textContent = '↓ role pelas camadas do tempo · toque nos quadrados para ler';
+}
 </script>
 </body>
 </html>
