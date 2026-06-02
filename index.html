@@ -352,8 +352,8 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     <p class="geo-nota">estrato II · 9 matérias com fonte verificada · raça ausente · fricção de classe · tipologia cinematográfica</p>
     <div class="termo-display tf-1980">cara de bandido</div>
     <p class="ocorrencias-label">matérias — passe o mouse · clique para acessar o original</p>
-    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="ocorrencias-grid" id="grid-1980"></div>
+    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="corpo-analise">
       <div class="analise-bloco">
         <p class="analise-titulo">Campo semântico</p>
@@ -390,8 +390,8 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     <p class="geo-nota">estrato III · 17 matérias com fonte verificada · 1ª nomeação racial explícita com cor de pele (Wesley Snipes · cinema) · marcadores étnicos paralelos</p>
     <div class="termo-display tf-1990">cara de bandido</div>
     <p class="ocorrencias-label">matérias — passe o mouse · clique para acessar o original</p>
-    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="ocorrencias-grid" id="grid-1990"></div>
+    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="corpo-analise">
       <div class="analise-bloco">
         <p class="analise-titulo">Campo semântico</p>
@@ -457,8 +457,8 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     <p class="geo-nota">estrato IV · 11 matérias com fonte verificada · 1ª nomeação racial explícita no campo policial · inversão do olhar · territorialização</p>
     <div class="termo-display tf-2000" style="color:#f0d8a0">cara de bandido</div>
     <p class="ocorrencias-label" style="opacity:0.6">matérias — passe o mouse · clique para acessar o original</p>
-    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="ocorrencias-grid" id="grid-2000"></div>
+    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="corpo-analise">
       <div class="analise-bloco">
         <p class="analise-titulo" style="opacity:0.6">Campo semântico</p>
@@ -497,8 +497,8 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     <p class="geo-nota" style="color:#e0c090;opacity:0.35">estrato V · 4 matérias com fonte verificada · saturação · espectro de não-branquitude</p>
     <div class="termo-display tf-2010" style="color:#ff4020">cara de bandido</div>
     <p class="ocorrencias-label" style="color:#e0b080;opacity:0.6">matérias — passe o mouse · clique para acessar o original</p>
-    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="ocorrencias-grid" id="grid-2010"></div>
+    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="corpo-analise">
       <div class="analise-bloco">
         <p class="analise-titulo" style="color:#e0c090;opacity:0.5">Campo semântico</p>
@@ -930,7 +930,6 @@ document.addEventListener('keydown', (e) => {
   window.addEventListener('resize', resize);
   resize();
 })();
-  });
 
 /* ══════════════════════════════════════════════ PAINEL CHUVA */
 const RP = document.getElementById('rp');
@@ -1043,12 +1042,6 @@ const obs = new IntersectionObserver((entries) => {
 
 sectionIds.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 
-document.addEventListener('touchstart', (e) => {
-  if (activeTooltip && !e.target.closest('.ocorrencia-sq') && !e.target.closest('.frag-tooltip')) {
-    activeTooltip.style.display = 'none';
-    activeTooltip = null;
-  }
-});
 
 applyKwState(0);
 activateSvState(0);
