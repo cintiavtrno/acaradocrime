@@ -162,6 +162,47 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   .rodape-texto{font-size:0.65rem}
   .nota-destaque{font-size:0.75rem}
 }
+  .ydi-wrap{width:100%;position:relative;border-bottom:2px solid;background:#ede4d0;border-color:#b09060;color:#221808;padding:0}
+.ydi-inner{max-width:780px;margin:0 auto;padding:3rem 2rem 3.5rem}
+.ydi-epoch{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;opacity:0.5;margin-bottom:0.3rem}
+.ydi-titulo{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;margin-bottom:0.4rem;opacity:0.85}
+.ydi-instrucao{font-family:'Playfair Display',serif;font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.45;margin-bottom:1.8rem}
+.ydi-canvas-wrap{position:relative;width:100%;height:200px;cursor:crosshair;user-select:none;touch-action:none}
+.ydi-canvas-wrap canvas{position:absolute;top:0;left:0;width:100%;height:100%}
+.ydi-btn{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;border:1px solid;padding:0.45rem 1.2rem;cursor:pointer;background:transparent;margin-top:1.2rem;display:none}
+.ydi-reveal-txt{font-family:'Playfair Display',serif;font-size:0.78rem;font-style:italic;line-height:1.75;margin-top:1.2rem;opacity:0;transition:opacity 0.8s ease;max-width:560px}
+.ydi-reveal-txt.visible{opacity:1}
+.ydi-sedimento-bar{position:absolute;left:0;top:0;bottom:0;width:5px;background:repeating-linear-gradient(180deg,#b09060 0,#b09060 4px,transparent 4px,transparent 9px)}
+.comp-overlay{display:none;position:fixed;inset:0;background:rgba(10,6,2,0.88);z-index:500;align-items:center;justify-content:center;padding:2rem}
+.comp-overlay.active{display:flex}
+.comp-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:760px;width:100%}
+.comp-card{background:#faf6ee;border:1.5px solid #2a1a08;padding:1.2rem;font-size:0.72rem;line-height:1.65}
+.comp-card-meta{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.5;margin-bottom:0.4rem}
+.comp-card-txt{font-family:'Special Elite',serif;color:#2a1a08;margin-bottom:0.5rem}
+.comp-card-racial{font-family:'Playfair Display',serif;font-size:0.55rem;font-style:italic;opacity:0.6;border-top:1px solid #d0c0a0;padding-top:0.4rem}
+.comp-card-link{font-family:'Playfair Display',serif;font-size:0.55rem;color:#5a3a10;margin-top:0.4rem;border-top:1px solid #d0c0a0;padding-top:0.4rem;display:block}
+.comp-card-regime{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.6rem;padding:0.2rem 0.5rem;display:inline-block;border:1px solid}
+.comp-regime-policial{color:#c02000;border-color:#c02000;background:rgba(192,32,0,0.07)}
+.comp-regime-estetico{color:#5a4010;border-color:#5a4010;background:rgba(90,64,16,0.07)}
+.comp-close{position:fixed;top:1.5rem;right:1.8rem;font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:#c0a878;cursor:pointer;z-index:501;opacity:0.7}
+@media(max-width:600px){.comp-inner{grid-template-columns:1fr}.comp-overlay{padding:1rem}}
+.leitor-overlay{display:none;position:fixed;inset:0;background:rgba(8,5,2,0.96);z-index:600;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
+.leitor-overlay.active{display:flex}
+.leitor-card{background:#faf6ee;border:1.5px solid #2a1a08;padding:2rem;max-width:540px;width:100%;position:relative}
+.leitor-meta{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;opacity:0.45;margin-bottom:0.5rem}
+.leitor-txt{font-family:'Special Elite',serif;color:#2a1a08;font-size:0.9rem;line-height:1.8;margin-bottom:0.8rem}
+.leitor-racial{font-family:'Playfair Display',serif;font-size:0.6rem;font-style:italic;opacity:0.55;border-top:1px solid #d0c0a0;padding-top:0.5rem;margin-bottom:0.5rem}
+.leitor-link{font-family:'Playfair Display',serif;font-size:0.55rem;color:#5a3a10;border-top:1px solid #d0c0a0;padding-top:0.4rem;display:block;margin-bottom:1.2rem}
+.leitor-nav{display:flex;gap:1rem;align-items:center}
+.leitor-nav button{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;border:1px solid #5a4a30;padding:0.4rem 1rem;cursor:pointer;background:transparent;color:#5a4a30}
+.leitor-nav button:hover{background:#5a4a30;color:#faf6ee}
+.leitor-contador{font-family:'Playfair Display',serif;font-size:0.55rem;opacity:0.4;margin:0 auto}
+.leitor-dec-badge{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.4;margin-bottom:0.3rem}
+.leitor-close{position:fixed;top:1.5rem;right:1.8rem;font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:#c0a878;cursor:pointer;z-index:601;opacity:0.7}
+.btn-leitor{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;border:1px solid rgba(42,26,8,0.25);padding:0.38rem 0.9rem;cursor:pointer;background:transparent;color:currentColor;opacity:0.55;transition:opacity 0.2s;display:inline-block;margin-bottom:1rem}
+.btn-leitor:hover{opacity:1}
+.comp-mode-active{box-shadow:0 0 0 3px #c08040,0 0 12px rgba(192,128,64,0.4)!important;position:relative;z-index:5}
+@media(max-width:600px){.leitor-card{padding:1.2rem}.leitor-txt{font-size:0.82rem}}
 @media(max-width:420px){
   .obra-titulo{font-size:clamp(1.9rem,9vw,3rem)}
   .estrato-inner{padding:1.4rem 1rem 1.8rem}
@@ -311,6 +352,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     <p class="geo-nota">estrato II · 9 matérias com fonte verificada · raça ausente · fricção de classe · tipologia cinematográfica</p>
     <div class="termo-display tf-1980">cara de bandido</div>
     <p class="ocorrencias-label">matérias — passe o mouse · clique para acessar o original</p>
+    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="ocorrencias-grid" id="grid-1980"></div>
     <div class="corpo-analise">
       <div class="analise-bloco">
@@ -348,6 +390,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     <p class="geo-nota">estrato III · 17 matérias com fonte verificada · 1ª nomeação racial explícita com cor de pele (Wesley Snipes · cinema) · marcadores étnicos paralelos</p>
     <div class="termo-display tf-1990">cara de bandido</div>
     <p class="ocorrencias-label">matérias — passe o mouse · clique para acessar o original</p>
+    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="ocorrencias-grid" id="grid-1990"></div>
     <div class="corpo-analise">
       <div class="analise-bloco">
@@ -389,7 +432,23 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     </div>
   </div>
 </div>
-
+<div class="ydi-wrap" id="e-ydi">
+  <div class="ydi-sedimento-bar"></div>
+  <div class="ydi-inner">
+    <p class="ydi-epoch">intermezzo · entre estratos · 1990–2000</p>
+    <p class="ydi-titulo">Quando você acha que a imprensa nomeou raça explicitamente no campo policial?</p>
+    <p class="ydi-instrucao">arraste para traçar sua linha · depois clique em revelar</p>
+    <div class="ydi-canvas-wrap" id="ydi-canvas-wrap">
+      <canvas id="ydi-bg"></canvas>
+      <canvas id="ydi-user"></canvas>
+      <canvas id="ydi-real"></canvas>
+    </div>
+    <button class="ydi-btn" id="ydi-btn" style="color:#221808;border-color:#b09060">revelar a curva real</button>
+    <p class="ydi-reveal-txt" id="ydi-reveal">
+      A primeira nomeação racial com marcador de cor de pele aparece nos anos 1990 — mas no campo do <em>cinema</em>, não da polícia. A crítica de Rubens Ewald Filho sobre Wesley Snipes ("cor muito escura") antecede em quase uma década a nomeação policial explícita. Esta só aparece nos anos 2000, na cobertura do BOPE em festa junina na favela: "maioria negra". O dado surpreende porque intuitivamente associamos o jargão ao campo policial — mas o corpus mostra que o cinema o racializou primeiro.
+    </p>
+  </div>
+</div>
 <!-- ESTRATO 2000 -->
 <div class="estrato e2000" id="e-2000">
   <div class="sedimento-bar"></div>
@@ -398,6 +457,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     <p class="geo-nota">estrato IV · 11 matérias com fonte verificada · 1ª nomeação racial explícita no campo policial · inversão do olhar · territorialização</p>
     <div class="termo-display tf-2000" style="color:#f0d8a0">cara de bandido</div>
     <p class="ocorrencias-label" style="opacity:0.6">matérias — passe o mouse · clique para acessar o original</p>
+    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="ocorrencias-grid" id="grid-2000"></div>
     <div class="corpo-analise">
       <div class="analise-bloco">
@@ -437,6 +497,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
     <p class="geo-nota" style="color:#e0c090;opacity:0.35">estrato V · 4 matérias com fonte verificada · saturação · espectro de não-branquitude</p>
     <div class="termo-display tf-2010" style="color:#ff4020">cara de bandido</div>
     <p class="ocorrencias-label" style="color:#e0b080;opacity:0.6">matérias — passe o mouse · clique para acessar o original</p>
+    <button class="btn-leitor" onclick="abrirLeitor(this.closest('.estrato').id)">ler todos os fragmentos ↓</button>
     <div class="ocorrencias-grid" id="grid-2010"></div>
     <div class="corpo-analise">
       <div class="analise-bloco">
@@ -468,7 +529,41 @@ O que o corpus documenta, portanto, não é um espectro contínuo de não-branqu
     </div>
   </div>
 </div>
+<!-- OVERLAY COMPARAÇÃO -->
+<div class="comp-overlay" id="comp-overlay" role="dialog" aria-modal="true">
+  <span class="comp-close" id="comp-close" tabindex="0">✕ fechar</span>
+  <div class="comp-inner" id="comp-inner">
+    <div class="comp-card" id="comp-a">
+      <div class="comp-card-meta" id="comp-a-meta"></div>
+      <div class="comp-card-txt" id="comp-a-txt"></div>
+      <div class="comp-card-racial" id="comp-a-racial"></div>
+      <a class="comp-card-link" id="comp-a-link" target="_blank" rel="noopener">↗ acessar original</a>
+    </div>
+    <div class="comp-card" id="comp-b">
+      <div class="comp-card-meta" id="comp-b-meta"></div>
+      <div class="comp-card-txt" id="comp-b-txt"></div>
+      <div class="comp-card-racial" id="comp-b-racial"></div>
+      <a class="comp-card-link" id="comp-b-link" target="_blank" rel="noopener">↗ acessar original</a>
+    </div>
+  </div>
+</div>
 
+<!-- OVERLAY LEITOR LINEAR -->
+<div class="leitor-overlay" id="leitor-overlay" role="dialog" aria-modal="true">
+  <span class="leitor-close" id="leitor-close" tabindex="0">✕ fechar</span>
+  <div class="leitor-card">
+    <p class="leitor-dec-badge" id="leitor-dec"></p>
+    <p class="leitor-meta" id="leitor-meta"></p>
+    <p class="leitor-txt" id="leitor-txt"></p>
+    <p class="leitor-racial" id="leitor-racial"></p>
+    <a class="leitor-link" id="leitor-link" target="_blank" rel="noopener">↗ acessar original na Hemeroteca Digital</a>
+    <div class="leitor-nav">
+      <button id="leitor-prev">← anterior</button>
+      <span class="leitor-contador" id="leitor-contador">1 / 41</span>
+      <button id="leitor-next">próximo →</button>
+    </div>
+  </div>
+</div>
 <div class="rodape">
   <div class="rodape-titulo">cara de bandido</div>
   <p class="rodape-texto">
@@ -573,11 +668,21 @@ const dados = {
   }
 };
 
-/* ══════════════════════════════════════════════ CONSTRUÇÃO DOS GRIDS */
+/* ══ GRIDS + MODO COMPARADO ══ */
+let compSelecionados = [];
+
+function getRegime(racial) {
+  if (!racial) return 'outro';
+  const r = racial.toLowerCase();
+  if (r.includes('policial') || r.includes('bope') || r.includes('favela') || r.includes('execução') || r.includes('internalização') || r.includes('implícito')) return 'policial';
+  if (r.includes('rock') || r.includes('cinema') || r.includes('celebridade') || r.includes('entretenimento') || r.includes('musical') || r.includes('estético') || r.includes('custo zero') || r.includes('subcultural') || r.includes('masculinidade') || r.includes('glamour')) return 'estetico';
+  return 'outro';
+}
+
 Object.keys(dados).forEach(dec => {
   const grid = document.getElementById('grid-' + dec);
   const { cor, itens } = dados[dec];
-  itens.forEach((item) => {
+  itens.forEach((item, idx) => {
     const el = document.createElement('a');
     el.className = 'ocorrencia-sq';
     el.href = item.url;
@@ -585,14 +690,31 @@ Object.keys(dados).forEach(dec => {
     el.rel = 'noopener noreferrer';
     el.style.background = cor.fill;
     el.style.borderColor = cor.borda;
+    el.dataset.dec = dec;
+    el.dataset.idx = idx;
     if (item.racial.startsWith('⚑')) el.style.boxShadow = '0 0 0 2px #ff2000, 0 0 8px rgba(255,32,0,0.4)';
     const tt = document.createElement('div');
     tt.className = 'frag-tooltip';
-    tt.innerHTML = `<div class="frag-tooltip-meta">${item.meta}</div><div class="frag-tooltip-text">${item.texto}</div><div class="frag-tooltip-racial">${item.racial}</div><div class="frag-tooltip-link">↗ clique para abrir o original na Hemeroteca Digital</div>`;
+    const regime = getRegime(item.racial);
+    const badgeHtml = regime === 'policial'
+      ? '<span style="font-family:Playfair Display,serif;font-size:0.5rem;letter-spacing:0.15em;text-transform:uppercase;color:#c02000;border:1px solid #c02000;padding:1px 5px;display:inline-block;margin-bottom:4px">regime policial</span><br>'
+      : regime === 'estetico'
+      ? '<span style="font-family:Playfair Display,serif;font-size:0.5rem;letter-spacing:0.15em;text-transform:uppercase;color:#5a4010;border:1px solid #5a4010;padding:1px 5px;display:inline-block;margin-bottom:4px">regime estético</span><br>'
+      : '';
+    tt.innerHTML = `<div class="frag-tooltip-meta">${item.meta}</div><div class="frag-tooltip-text">${badgeHtml}${item.texto}</div><div class="frag-tooltip-racial">${item.racial}</div><div class="frag-tooltip-link">↗ clique para abrir · shift+clique para comparar</div>`;
     document.body.appendChild(tt);
-    el.addEventListener('mouseenter', (e) => { el.style.background = cor.hover; tt.style.display = 'block'; posTooltip(tt, e); });
+    el.addEventListener('mouseenter', (e) => {
+      if (!compSelecionados.includes(el)) el.style.background = cor.hover;
+      tt.style.display = 'block'; posTooltip(tt, e);
+    });
     el.addEventListener('mousemove', (e) => { posTooltip(tt, e); });
-    el.addEventListener('mouseleave', () => { el.style.background = cor.fill; tt.style.display = 'none'; });
+    el.addEventListener('mouseleave', () => {
+      if (!compSelecionados.includes(el)) el.style.background = cor.fill;
+      tt.style.display = 'none';
+    });
+    el.addEventListener('click', (e) => {
+      if (e.shiftKey) { e.preventDefault(); selecionarParaComp(el, item, cor); }
+    });
     el.addEventListener('touchstart', (e) => {
       e.preventDefault();
       if (activeTooltip && activeTooltip !== tt) { activeTooltip.style.display = 'none'; }
@@ -602,6 +724,213 @@ Object.keys(dados).forEach(dec => {
     grid.appendChild(el);
   });
 });
+
+document.addEventListener('touchstart', (e) => {
+  if (activeTooltip && !e.target.closest('.ocorrencia-sq') && !e.target.closest('.frag-tooltip')) {
+    activeTooltip.style.display = 'none';
+    activeTooltip = null;
+  }
+});
+
+/* ══ MODO COMPARADO ══ */
+function selecionarParaComp(el, item, cor) {
+  if (compSelecionados.includes(el)) {
+    compSelecionados = compSelecionados.filter(e => e !== el);
+    el.classList.remove('comp-mode-active');
+    el.style.background = cor.fill;
+    return;
+  }
+  if (compSelecionados.length >= 2) {
+    const old = compSelecionados.shift();
+    old.classList.remove('comp-mode-active');
+  }
+  compSelecionados.push(el);
+  el.classList.add('comp-mode-active');
+  if (compSelecionados.length === 2) setTimeout(() => abrirComp(), 200);
+}
+
+function abrirComp() {
+  const [elA, elB] = compSelecionados;
+  const iA = dados[elA.dataset.dec].itens[parseInt(elA.dataset.idx)];
+  const iB = dados[elB.dataset.dec].itens[parseInt(elB.dataset.idx)];
+  function preencherCard(prefix, item, dec) {
+    document.getElementById(prefix + '-meta').textContent = item.meta;
+    document.getElementById(prefix + '-txt').textContent = item.texto;
+    document.getElementById(prefix + '-racial').textContent = item.racial;
+    document.getElementById(prefix + '-link').href = item.url;
+    const regime = getRegime(item.racial);
+    const card = document.getElementById(prefix);
+    const badge = document.createElement('div');
+    badge.className = 'comp-card-regime ' + (regime === 'policial' ? 'comp-regime-policial' : 'comp-regime-estetico');
+    badge.textContent = regime === 'policial' ? 'regime policial · ' + dec + 's' : 'regime estético · ' + dec + 's';
+    card.insertBefore(badge, card.firstChild);
+  }
+  preencherCard('comp-a', iA, elA.dataset.dec);
+  preencherCard('comp-b', iB, elB.dataset.dec);
+  document.getElementById('comp-overlay').classList.add('active');
+}
+
+document.getElementById('comp-close').addEventListener('click', () => {
+  document.getElementById('comp-overlay').classList.remove('active');
+  compSelecionados.forEach(el => el.classList.remove('comp-mode-active'));
+  compSelecionados = [];
+  document.querySelectorAll('.comp-card-regime').forEach(b => b.remove());
+});
+document.getElementById('comp-overlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('comp-overlay')) document.getElementById('comp-close').click();
+});
+
+/* ══ LEITOR LINEAR ══ */
+let leitorItens = [];
+let leitorIdx = 0;
+
+function abrirLeitor(estratoId) {
+  const decMap = { 'e-1980': '1980', 'e-1990': '1990', 'e-2000': '2000', 'e-2010': '2010' };
+  const dec = decMap[estratoId];
+  if (!dec) return;
+  leitorItens = dados[dec].itens.map(i => ({ ...i, dec }));
+  leitorIdx = 0;
+  renderLeitor();
+  document.getElementById('leitor-overlay').classList.add('active');
+}
+
+function renderLeitor() {
+  const item = leitorItens[leitorIdx];
+  document.getElementById('leitor-dec').textContent = item.dec + 's';
+  document.getElementById('leitor-meta').textContent = item.meta;
+  document.getElementById('leitor-txt').textContent = item.texto;
+  document.getElementById('leitor-racial').textContent = item.racial;
+  document.getElementById('leitor-link').href = item.url;
+  document.getElementById('leitor-contador').textContent = (leitorIdx + 1) + ' / ' + leitorItens.length;
+}
+
+document.getElementById('leitor-prev').addEventListener('click', () => {
+  if (leitorIdx > 0) { leitorIdx--; renderLeitor(); }
+});
+document.getElementById('leitor-next').addEventListener('click', () => {
+  if (leitorIdx < leitorItens.length - 1) { leitorIdx++; renderLeitor(); }
+});
+document.getElementById('leitor-close').addEventListener('click', () => {
+  document.getElementById('leitor-overlay').classList.remove('active');
+});
+document.addEventListener('keydown', (e) => {
+  if (document.getElementById('leitor-overlay').classList.contains('active')) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') document.getElementById('leitor-next').click();
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') document.getElementById('leitor-prev').click();
+    if (e.key === 'Escape') document.getElementById('leitor-close').click();
+  }
+  if (document.getElementById('comp-overlay').classList.contains('active') && e.key === 'Escape') {
+    document.getElementById('comp-close').click();
+  }
+});
+
+/* ══ YOU DRAW IT ══ */
+(function() {
+  const wrap = document.getElementById('ydi-canvas-wrap');
+  if (!wrap) return;
+  const bgC = document.getElementById('ydi-bg');
+  const userC = document.getElementById('ydi-user');
+  const realC = document.getElementById('ydi-real');
+  const btn = document.getElementById('ydi-btn');
+  const revealTxt = document.getElementById('ydi-reveal');
+  const ANOS = [1980, 1985, 1990, 1995, 2000, 2005, 2010, 2015, 2019];
+  const REAL = [0, 0, 0.08, 0.18, 0.72, 0.85, 0.95, 0.98, 1.0];
+  let W, H, pad, userLine = [], drawn = false, revealed = false, drawing = false;
+
+  function resize() {
+    W = wrap.offsetWidth; H = wrap.offsetHeight;
+    pad = { t: 24, r: 20, b: 36, l: 52 };
+    [bgC, userC, realC].forEach(c => { c.width = W; c.height = H; });
+    drawBg();
+    if (userLine.length > 1) drawUser();
+    if (revealed) drawReal(true);
+  }
+  function xPos(ano) { return pad.l + (ano - 1980) / (2019 - 1980) * (W - pad.l - pad.r); }
+  function yPos(v) { return pad.t + (1 - v) * (H - pad.t - pad.b); }
+
+  function drawBg() {
+    const ctx = bgC.getContext('2d');
+    ctx.clearRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(42,26,8,0.18)'; ctx.lineWidth = 0.8;
+    ANOS.forEach(a => {
+      const x = xPos(a);
+      ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, H - pad.b); ctx.stroke();
+      ctx.fillStyle = 'rgba(42,26,8,0.35)';
+      ctx.font = '9px serif'; ctx.textAlign = 'center';
+      ctx.fillText(a, x, H - pad.b + 13);
+    });
+    [0, 0.25, 0.5, 0.75, 1].forEach(v => {
+      const y = yPos(v);
+      ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(W - pad.r, y); ctx.stroke();
+      ctx.fillStyle = 'rgba(42,26,8,0.3)'; ctx.font = '9px serif'; ctx.textAlign = 'right';
+      ctx.fillText(Math.round(v * 100) + '%', pad.l - 5, y + 3);
+    });
+    ctx.fillStyle = 'rgba(42,26,8,0.1)';
+    ctx.fillRect(pad.l, pad.t, xPos(1994) - pad.l, H - pad.t - pad.b);
+    ctx.fillStyle = 'rgba(42,26,8,0.25)'; ctx.font = 'italic 8px serif'; ctx.textAlign = 'center';
+    ctx.fillText('dados conhecidos', (pad.l + xPos(1994)) / 2, (pad.t + H - pad.b) / 2);
+  }
+  function drawUser() {
+    const ctx = userC.getContext('2d');
+    ctx.clearRect(0, 0, W, H);
+    if (userLine.length < 2) return;
+    ctx.beginPath(); ctx.moveTo(userLine[0].x, userLine[0].y);
+    userLine.forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.strokeStyle = 'rgba(176,96,48,0.7)'; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.stroke();
+  }
+  function drawReal(instant) {
+    const ctx = realC.getContext('2d');
+    ctx.clearRect(0, 0, W, H);
+    const pts = ANOS.map((a, i) => ({ x: xPos(a), y: yPos(REAL[i]) }));
+    if (instant) {
+      ctx.beginPath(); ctx.moveTo(pts[0].x, pts[0].y);
+      pts.forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.strokeStyle = '#c02000'; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.stroke();
+      pts.forEach((p, i) => {
+        if (REAL[i] > 0.1) { ctx.beginPath(); ctx.arc(p.x, p.y, 4, 0, Math.PI * 2); ctx.fillStyle = '#c02000'; ctx.fill(); }
+      });
+      return;
+    }
+    let i = 0;
+    function step() {
+      if (i >= pts.length - 1) return;
+      ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[i+1].x, pts[i+1].y);
+      ctx.strokeStyle = '#c02000'; ctx.lineWidth = 2.5; ctx.stroke();
+      if (REAL[i+1] > 0.1) { ctx.beginPath(); ctx.arc(pts[i+1].x, pts[i+1].y, 4, 0, Math.PI*2); ctx.fillStyle = '#c02000'; ctx.fill(); }
+      i++;
+      if (i < pts.length - 1) setTimeout(step, 140);
+      else revealTxt.classList.add('visible');
+    }
+    setTimeout(step, 100);
+  }
+  function getXY(e) {
+    const rect = userC.getBoundingClientRect();
+    const src = e.touches ? e.touches[0] : e;
+    return { x: src.clientX - rect.left, y: src.clientY - rect.top };
+  }
+  function startDraw(e) {
+    if (revealed) return; e.preventDefault(); drawing = true;
+    const p = getXY(e); if (p.x < xPos(1994)) return;
+    userLine = [p]; drawn = false; btn.style.display = 'none';
+  }
+  function moveDraw(e) {
+    if (!drawing || revealed) return; e.preventDefault();
+    const p = getXY(e); if (p.x >= xPos(1994)) userLine.push(p);
+    drawUser(); if (userLine.length > 3) { drawn = true; btn.style.display = 'inline-block'; }
+  }
+  function endDraw() { drawing = false; }
+
+  userC.addEventListener('mousedown', startDraw);
+  userC.addEventListener('mousemove', moveDraw);
+  userC.addEventListener('mouseup', endDraw);
+  userC.addEventListener('touchstart', startDraw, { passive: false });
+  userC.addEventListener('touchmove', moveDraw, { passive: false });
+  userC.addEventListener('touchend', endDraw);
+  btn.addEventListener('click', () => { if (!drawn || revealed) return; revealed = true; btn.style.display = 'none'; drawReal(false); });
+  window.addEventListener('resize', resize);
+  resize();
+})();
+  });
 
 /* ══════════════════════════════════════════════ PAINEL CHUVA */
 const RP = document.getElementById('rp');
