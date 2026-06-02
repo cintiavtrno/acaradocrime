@@ -10,135 +10,70 @@
 html{scroll-behavior:smooth}
 body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow-x:hidden}
 
-/* ═══════════════════════════════════════════
-   1. PALAVRA CINÉTICA (FUNDO FIXO)
-═══════════════════════════════════════════ */
 #kw{
-  position:fixed;
-  top:50%;left:50%;
+  position:fixed;top:50%;left:50%;
   transform:translate(-50%,-50%);
-  pointer-events:none;
-  z-index:1;
-  white-space:nowrap;
-  user-select:none;
-  text-align:center;
-  /* estado inicial */
+  pointer-events:none;z-index:1;
+  white-space:nowrap;user-select:none;text-align:center;
   font-family:'UnifrakturMaguntia',serif;
   font-size:clamp(2.5rem,5.5vw,5rem);
-  color:#c8b890;
-  opacity:0.055;
-  letter-spacing:0.02em;
-  /* só tamanho, opacidade, cor e espaçamento fazem transição suave */
+  color:#c8b890;opacity:0.055;letter-spacing:0.02em;
   transition:font-size 1.5s cubic-bezier(0.16,1,0.3,1),
              opacity 1.5s cubic-bezier(0.16,1,0.3,1),
              color 1.5s cubic-bezier(0.16,1,0.3,1),
              letter-spacing 1.5s cubic-bezier(0.16,1,0.3,1);
 }
 
-/* ═══════════════════════════════════════════
-   2. PAINEL CHUVA (SEDIMENTAÇÃO)
-═══════════════════════════════════════════ */
 #rp{
-  position:fixed;
-  right:0;top:0;bottom:0;
-  width:62px;
-  z-index:40;
-  pointer-events:none;
-  overflow:hidden;
+  position:fixed;right:0;top:0;bottom:0;width:62px;
+  z-index:40;pointer-events:none;overflow:hidden;
   border-left:1px solid rgba(42,26,8,0.07);
 }
 #rp-label{
-  position:absolute;
-  top:50%;left:50%;
+  position:absolute;top:50%;left:50%;
   transform:translate(-50%,-50%) rotate(-90deg);
-  font-family:'Playfair Display',serif;
-  font-size:0.42rem;
-  letter-spacing:0.32em;
-  text-transform:uppercase;
-  color:rgba(42,26,8,0.15);
-  white-space:nowrap;
-  pointer-events:none;
+  font-family:'Playfair Display',serif;font-size:0.42rem;
+  letter-spacing:0.32em;text-transform:uppercase;
+  color:rgba(42,26,8,0.15);white-space:nowrap;pointer-events:none;
 }
-.rp-sq{
-  position:absolute;
-  border:1.5px solid;
-  transition-property:top;
-  transition-timing-function:cubic-bezier(0.22,1,0.36,1);
-  will-change:top;
-}
+.rp-sq{position:absolute;border:1.5px solid;transition-property:top;transition-timing-function:cubic-bezier(0.22,1,0.36,1);will-change:top;}
 #rp-counter{
-  position:absolute;
-  bottom:8px;left:0;right:0;
-  text-align:center;
-  font-family:'Playfair Display',serif;
-  font-size:0.5rem;
-  color:rgba(42,26,8,0.3);
-  letter-spacing:0.1em;
+  position:absolute;bottom:8px;left:0;right:0;text-align:center;
+  font-family:'Playfair Display',serif;font-size:0.5rem;
+  color:rgba(42,26,8,0.3);letter-spacing:0.1em;
 }
 
-/* ═══════════════════════════════════════════
-   3. SVG METAMORFOSE (PAINEL LATERAL FIXO)
-═══════════════════════════════════════════ */
 #msv-wrap{
-  position:fixed;
-  right:70px;
-  top:50%;
-  transform:translateY(-50%);
-  width:155px;
-  z-index:35;
+  position:fixed;right:70px;top:50%;transform:translateY(-50%);
+  width:155px;z-index:35;
   background:rgba(245,240,232,0.88);
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   border:1px solid rgba(42,26,8,0.1);
   padding:1.1rem 1rem 0.8rem;
-  display:none;/* mostra apenas em telas largas */
-  pointer-events:none;
+  display:none;pointer-events:none;
 }
 @media(min-width:1366px){
   #msv-wrap{display:block}
   .lav-zona{display:none!important}
   .corpo-analise{grid-template-columns:1fr!important}
 }
-@media(max-width:640px){
-  #rp{width:36px}
-  #rp-label{display:none}
-  #kw{font-size:clamp(2rem,8vw,4rem)}
-}
-@media(max-width:400px){
-  #rp{display:none}
-}
+@media(max-width:640px){#rp{width:36px}#rp-label{display:none}#kw{font-size:clamp(2rem,8vw,4rem)}}
+@media(max-width:400px){#rp{display:none}}
 
 .sv-state{transition:opacity 1s ease;opacity:0}
 .sv-state.active{opacity:1}
-
 #msv-label{
-  font-family:'Playfair Display',serif;
-  font-size:0.5rem;
-  letter-spacing:0.16em;
-  text-transform:uppercase;
-  text-align:center;
-  margin-top:0.6rem;
-  line-height:1.5;
-  min-height:2em;
-  color:#4a3010;
-  opacity:0.38;
-  transition:opacity 0.5s ease, color 0.5s ease;
+  font-family:'Playfair Display',serif;font-size:0.5rem;letter-spacing:0.16em;
+  text-transform:uppercase;text-align:center;margin-top:0.6rem;line-height:1.5;
+  min-height:2em;color:#4a3010;opacity:0.38;
+  transition:opacity 0.5s ease,color 0.5s ease;
 }
 #msv-era-badge{
-  font-family:'Playfair Display',serif;
-  font-size:0.55rem;
-  letter-spacing:0.22em;
-  text-align:center;
-  margin-bottom:0.5rem;
-  color:#9a7a50;
-  opacity:0.6;
-  text-transform:uppercase;
-  transition:color 0.6s ease;
+  font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.22em;
+  text-align:center;margin-bottom:0.5rem;color:#9a7a50;opacity:0.6;
+  text-transform:uppercase;transition:color 0.6s ease;
 }
 
-/* ═══════════════════════════════════════════
-   ESTILOS ORIGINAIS
-═══════════════════════════════════════════ */
 .obra-header{padding:4rem 2rem 2rem;max-width:680px;margin:0 auto;text-align:center;border-bottom:1.5px solid #1a1208}
 .obra-pretitulo{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.35em;color:#7a6a50;text-transform:uppercase;margin-bottom:1.5rem}
 .obra-titulo{font-family:'UnifrakturMaguntia',serif;font-size:clamp(3rem,9vw,6.5rem);color:#1a1208;line-height:0.9;margin-bottom:1.5rem}
@@ -172,7 +107,8 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 @media(max-width:600px){.corpo-analise{grid-template-columns:1fr}}
 
 .lav-zona{display:flex;flex-direction:column;align-items:center}
-.lav-zona svg{width:310px;height:auto}.lav-label{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.4;margin-top:0.8rem;text-align:center}
+.lav-zona svg{width:310px;height:auto}
+.lav-label{font-family:'Playfair Display',serif;font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.4;margin-top:0.8rem;text-align:center}
 
 .analise-titulo{font-family:'Playfair Display',serif;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.5;margin-bottom:0.6rem}
 .analise-texto{font-size:0.95rem;line-height:1.82}
@@ -194,43 +130,38 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 
 .scroll-depth{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#c8b890,#703010,#3a1005);z-index:999;transition:width 0.1s}
 
+.nota-destaque{
+  font-family:'Playfair Display',serif;font-size:0.8rem;font-style:italic;
+  border-left:3px solid currentColor;padding:0.7rem 1rem;
+  margin:1.2rem 0;opacity:0.75;line-height:1.7;
+}
+
 .rodape{background:#1a1208;color:#c0a878;padding:3rem 2rem;text-align:center}
 .rodape-titulo{font-family:'UnifrakturMaguntia',serif;font-size:2.5rem;margin-bottom:1rem;opacity:0.4}
 .rodape-texto{font-family:'Playfair Display',serif;font-size:0.7rem;line-height:1.9;font-style:italic;max-width:500px;margin:0 auto;opacity:0.6}
-@media(max-width:768px){
-  #kw{display:none}
-  #rp{display:none}
-  #msv-wrap{display:none}
 
+@media(max-width:768px){
+  #kw{display:none}#rp{display:none}#msv-wrap{display:none}
   .obra-header{padding:2rem 1.2rem 1.5rem}
   .obra-titulo{font-size:clamp(2.2rem,11vw,4rem)}
   .obra-subtitulo{font-size:0.8rem}
   .obra-instrucao{font-size:0.55rem;letter-spacing:0.15em}
   .obra-pretitulo{font-size:0.55rem;letter-spacing:0.2em}
-
   .estrato-inner{padding:1.8rem 1.2rem 2.2rem}
   .termo-display{font-size:clamp(1.6rem,8vw,3rem);margin-bottom:1rem}
   .geo-nota{font-size:0.65rem;text-align:left}
-  .estrato-epoch{font-size:0.55rem}
-
   .corpo-analise{grid-template-columns:1fr;gap:1.2rem}
   .lav-zona{display:none}
   .analise-texto{font-size:0.88rem;line-height:1.72}
-  .analise-titulo{font-size:0.55rem}
-
   .ocorrencia-sq{width:28px;height:28px}
   .ocorrencias-grid{gap:5px}
-  .ocorrencias-label{font-size:0.5rem}
-
   .frag-tooltip{width:calc(100vw - 32px);max-width:300px;font-size:0.65rem}
-  .frag-tooltip-meta{font-size:0.5rem}
-
+  .frag-tooltip{position:fixed;bottom:16px;top:auto;left:16px;right:16px;width:auto;max-width:none}
   .rodape{padding:2rem 1.2rem}
   .rodape-titulo{font-size:1.8rem}
   .rodape-texto{font-size:0.65rem}
-  .frag-tooltip{position:fixed;bottom:16px;top:auto;left:16px;right:16px;width:auto;max-width:none}
+  .nota-destaque{font-size:0.75rem}
 }
-
 @media(max-width:420px){
   .obra-titulo{font-size:clamp(1.9rem,9vw,3rem)}
   .estrato-inner{padding:1.4rem 1rem 1.8rem}
@@ -241,30 +172,19 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 </head>
 <body>
 
-<!-- BARRA DE SCROLL -->
 <div class="scroll-depth" id="sd"></div>
 
-<!-- ══════════════════════════════════════
-     1. PALAVRA CINÉTICA (FUNDO FIXO)
-══════════════════════════════════════ -->
 <div id="kw" aria-hidden="true">cara de bandido</div>
 
-<!-- ══════════════════════════════════════
-     2. PAINEL CHUVA / SEDIMENTAÇÃO
-══════════════════════════════════════ -->
 <div id="rp" aria-label="Sedimentação visual das ocorrências">
   <span id="rp-label">sedimento</span>
   <div id="rp-counter">0</div>
 </div>
 
-<!-- ══════════════════════════════════════
-     3. SVG METAMORFOSE (LATERAL FIXO)
-══════════════════════════════════════ -->
 <div id="msv-wrap" aria-hidden="true">
   <p id="msv-era-badge">pré-corpus</p>
   <svg id="msv" viewBox="0 0 175 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;overflow:visible">
 
-    <!-- Estado 0: intro / neutro -->
     <g id="sv0" class="sv-state active">
       <ellipse cx="88" cy="90" rx="56" ry="67" fill="none" stroke="#4a3010" stroke-width="1.2" stroke-dasharray="6,4" opacity="0.32"/>
       <line x1="88" y1="23" x2="88" y2="157" stroke="#4a3010" stroke-width="0.5" opacity="0.18" stroke-dasharray="3,3"/>
@@ -273,7 +193,6 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <text x="88" y="178" text-anchor="middle" font-family="Playfair Display,serif" font-size="11" fill="#4a3010" opacity="0.38" font-style="italic">a face como arquivo do crime</text>
     </g>
 
-    <!-- Estado 1: 1980 -->
     <g id="sv1" class="sv-state">
       <rect x="18" y="25" width="140" height="110" rx="3" fill="none" stroke="#5a4020" stroke-width="1.5" opacity="0.62"/>
       <line x1="18" y1="80" x2="158" y2="80" stroke="#5a4020" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.42"/>
@@ -284,25 +203,27 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <text x="88" y="188" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#5a4020" opacity="0.36" font-style="italic">classe divide · raça ausente ∅</text>
     </g>
 
-    <!-- Estado 2: 1990 -->
     <g id="sv2" class="sv-state">
       <defs>
         <marker id="arwM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
           <path d="M1 1L9 5L1 9" fill="none" stroke="#5a3010" stroke-width="2"/>
         </marker>
       </defs>
-      <rect x="4" y="32" width="65" height="65" rx="3" fill="#c8a878" opacity="0.17" stroke="#6a4010" stroke-width="1.2"/>
-      <text x="36" y="69" text-anchor="middle" font-family="Special Elite,serif" font-size="9" fill="#5a3010">rural</text>
-      <path d="M72 64 L100 64" stroke="#5a3010" stroke-width="1.2" fill="none" opacity="0.65" marker-end="url(#arwM)"/>
-      <circle cx="139" cy="64" r="36" fill="#a07838" opacity="0.12" stroke="#6a3010" stroke-width="1.5"/>
-      <text x="139" y="61" text-anchor="middle" font-family="Special Elite,serif" font-size="9.5" fill="#4a2808">urbano</text>
-      <text x="139" y="75" text-anchor="middle" font-family="Special Elite,serif" font-size="7.5" fill="#4a2808" opacity="0.62">implícito</text>
-      <text x="88" y="128" text-anchor="middle" font-family="Playfair Display,serif" font-size="8.5" fill="#5a3010" font-style="italic" opacity="0.62">"precisava ter cara?"</text>
-      <line x1="22" y1="152" x2="154" y2="152" stroke="#5a3010" stroke-width="0.5" opacity="0.22"/>
-      <text x="88" y="172" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#5a3010" opacity="0.36">primeira fissura semântica</text>
+      <rect x="4" y="32" width="65" height="55" rx="3" fill="#c8a878" opacity="0.17" stroke="#6a4010" stroke-width="1.2"/>
+      <text x="36" y="63" text-anchor="middle" font-family="Special Elite,serif" font-size="9" fill="#5a3010">cinema</text>
+      <text x="36" y="75" text-anchor="middle" font-family="Special Elite,serif" font-size="7" fill="#5a3010" opacity="0.7">rock</text>
+      <path d="M72 57 L100 57" stroke="#5a3010" stroke-width="1.2" fill="none" opacity="0.65" marker-end="url(#arwM)"/>
+      <circle cx="139" cy="57" r="33" fill="#a07838" opacity="0.12" stroke="#6a3010" stroke-width="1.5"/>
+      <text x="139" y="52" text-anchor="middle" font-family="Special Elite,serif" font-size="9.5" fill="#4a2808">urbano</text>
+      <text x="139" y="64" text-anchor="middle" font-family="Special Elite,serif" font-size="7.5" fill="#4a2808" opacity="0.62">implícito</text>
+      <circle cx="139" cy="57" r="16" fill="none" stroke="#c02000" stroke-width="1.2" stroke-dasharray="3,2" opacity="0.55"/>
+      <text x="139" y="81" text-anchor="middle" font-family="Special Elite,serif" font-size="6.5" fill="#c02000" opacity="0.7">Snipes</text>
+      <text x="88" y="118" text-anchor="middle" font-family="Playfair Display,serif" font-size="8.5" fill="#5a3010" font-style="italic" opacity="0.62">"cor muito escura"</text>
+      <text x="88" y="130" text-anchor="middle" font-family="Playfair Display,serif" font-size="7.5" fill="#c02000" opacity="0.7">1ª nomeação racial + cor</text>
+      <line x1="22" y1="148" x2="154" y2="148" stroke="#5a3010" stroke-width="0.5" opacity="0.22"/>
+      <text x="88" y="166" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#5a3010" opacity="0.36">cinema antes do campo policial</text>
     </g>
 
-    <!-- Estado 3: 2000 -->
     <g id="sv3" class="sv-state">
       <defs>
         <radialGradient id="ngG" cx="50%" cy="50%" r="50%">
@@ -314,12 +235,11 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <ellipse cx="67" cy="74" rx="9" ry="5.5" fill="#f0c090" opacity="0.18"/>
       <ellipse cx="109" cy="74" rx="9" ry="5.5" fill="#f0c090" opacity="0.18"/>
       <path d="M69 100 Q88 113 107 100" fill="none" stroke="#f0c090" stroke-width="1" opacity="0.16"/>
-      <text x="88" y="93" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="12" fill="#c03010" letter-spacing="2.5" opacity="0.95">MAIORIA NEGRA</text>
-      <text x="88" y="172" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#e0a878" opacity="0.52" font-style="italic">1ª nomeação racial explícita</text>
-      <text x="88" y="185" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#e0a878" opacity="0.52" font-style="italic">BOPE · favela</text>
+      <text x="88" y="88" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="11" fill="#c03010" letter-spacing="2.5" opacity="0.95">MAIORIA NEGRA</text>
+      <text x="88" y="162" text-anchor="middle" font-family="Playfair Display,serif" font-size="9.5" fill="#e0a878" opacity="0.52" font-style="italic">1ª nomeação policial explícita</text>
+      <text x="88" y="176" text-anchor="middle" font-family="Playfair Display,serif" font-size="9" fill="#e0a878" opacity="0.42" font-style="italic">BOPE · favela · inversão</text>
     </g>
 
-    <!-- Estado 4: 2010 -->
     <g id="sv4" class="sv-state">
       <circle cx="35" cy="88" r="33" fill="#1a0505" stroke="#ff3010" stroke-width="2.5"/>
       <text x="35" y="86" text-anchor="middle" font-family="Oswald,sans-serif" font-size="8" fill="#ff5030" letter-spacing="1">NEGRO</text>
@@ -344,7 +264,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 <div class="obra-header">
   <p class="obra-pretitulo">Levantamento histórico-discursivo · Hemeroteca Digital Brasileira · Jornal do Brasil (RJ) · A Tribuna (SP)</p>
   <h1 class="obra-titulo">cara de bandido</h1>
-  <p class="obra-subtitulo">Uma expressão que constrói o rosto antes do rosto existir.<br>Matérias mapeadas em quatro décadas. Um argumento que se sedimenta.</p>
+  <p class="obra-subtitulo">Uma expressão que constrói o rosto antes do rosto existir.<br>Matérias mapeadas em quatro décadas de dois periódicos. Um argumento que se sedimenta.</p>
   <p class="obra-instrucao">↓ role para descer pelas camadas do tempo · passe o mouse nos quadrados para ler e acessar o original</p>
 </div>
 
@@ -358,13 +278,13 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo">A expressão como instrumento</p>
         <p class="analise-texto">
-          <em>"Cara de bandido"</em> é um sintagma fisionômico. Antes de ser jargão policial, antes de ser mídia, era frase cotidiana, a crença de que o rosto carrega a culpa. Uma herança da frenologia e da criminologia positivista do século XIX, que acreditava poder ler o crime nas feições.
+          <em>"Cara de bandido"</em> é um sintagma fisionômico. Antes de ser jargão policial, antes de ser mídia, era frase cotidiana — a crença de que o rosto carrega a culpa. Uma herança da frenologia e da criminologia positivista do século XIX, que acreditava poder ler o crime nas feições.
           <br><br>
-          A ideia deste mapeamento nasceu de uma pergunta simples: quando a expressão passou a ter cor? Não se tratava de saber se o jargão era racista (isso já me parecia dado), mas de tentar rastrear <em>quando e como</em> a imprensa foi ancorando a expressão a corpos específicos. A Hemeroteca Digital Brasileira, com seu acervo digitalizado e sistema de busca por OCR, tornou possível uma resposta documental.
+          A ideia deste mapeamento nasceu de uma pergunta simples: quando a expressão passou a ter cor? Não se tratava de saber se o jargão era racista (isso já parecia dado), mas de tentar rastrear <em>quando e como</em> a imprensa foi ancorando a expressão a corpos específicos. A Hemeroteca Digital Brasileira, com seu acervo digitalizado e sistema de busca por OCR, tornou possível uma resposta documental.
           <br><br>
-          A busca foi feita pela expressão exata, entre aspas: <em>"cara de bandido"</em>. O critério não é arbitrário, já que a preposição <em>de</em> no português funciona como conectivo de subordinação: dizer que alguém <em>tem cara de bandido</em> é diferente de dizer que parece um, ou que lembra. O <em>de</em> marca pertencimento ou origem, como em "cara de criança", "cara de safado", "cara de santo".
+          A busca foi feita pela expressão exata, entre aspas: <em>"cara de bandido"</em>. O critério não é arbitrário — a preposição <em>de</em> no português funciona como conectivo de subordinação: dizer que alguém <em>tem cara de bandido</em> é diferente de dizer que parece um, ou que lembra. O <em>de</em> marca pertencimento, como em "cara de criança", "cara de safado", "cara de santo".
           <br><br>
-          A plataforma retornou algumas ocorrências a mais do que as aqui registradas. Essas foram descartadas após leitura, pois continham os termos separados ou em construções onde o sintagma não se formava. Apenas as ocorrências com a expressão exata foram consideradas.
+          O corpus aqui reunido cobre dois periódicos: o <em>Jornal do Brasil (RJ)</em> e <em>A Tribuna (SP)</em>, ambos com acervo disponível de 1980 a 2019. Apenas as ocorrências com o sintagma íntegro foram incluídas — as demais foram descartadas após leitura individual.
           <br><br>
           O que se lê abaixo são fragmentos. Cada quadrado é uma matéria. O conjunto <em>sugere</em> um percurso, não prova nada de forma definitiva, mas aponta para uma sedimentação.
         </p>
@@ -388,7 +308,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   <div class="sedimento-bar"></div>
   <div class="estrato-inner">
     <p class="estrato-epoch">1980 – 1989</p>
-    <p class="geo-nota">estrato II · 6 matérias com fonte verificada · raça ausente · fricção de classe</p>
+    <p class="geo-nota">estrato II · 9 matérias com fonte verificada · raça ausente · fricção de classe · tipologia cinematográfica</p>
     <div class="termo-display tf-1980">cara de bandido</div>
     <p class="ocorrencias-label">matérias — passe o mouse · clique para acessar o original</p>
     <div class="ocorrencias-grid" id="grid-1980"></div>
@@ -396,11 +316,13 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo">Campo semântico</p>
         <p class="analise-texto">
-          O que o corpus dos anos 1980 aponta é um predomínio do uso <em>descritivo genérico</em> a partir de uma fisionomia considerada ameaçadora e também de apropriações estético-culturais associadas à rebeldia contracultural do rock. A expressão parece circular como descrição fenomenológica, ainda não como categoria de suspeita policial estruturada.
+          O corpus dos anos 1980 apresenta dois regimes de uso que coexistem sem tensão: o <em>descritivo genérico</em> (fisionomia ameaçadora como atributo físico neutro) e o <em>estético-contracultural</em> (a expressão como capital de rebeldia do rock).
           <br><br>
-          A <em>fricção de classe</em> surge como conflito central: o jargão se choca com o status socioeconômico do indivíduo. O vendedor de armas que menciona que a pessoa "tem cara de bandido mas apresenta documentos de engenheiro ou médico" pode sugerir que o operador é fisionômico-classista, e que a apresentação de capital cultural o neutraliza.
+          O caso Ivan Candido é revelador: ator branco que "cismaram que tinha cara de bandido" e era escalado sistematicamente para esses papéis nas novelas. Isso documenta a existência de uma <em>tipologia cinematográfica completamente desracializada</em> — o durão físico genérico, disponível à branquitude como atributo cênico sem custo social.
           <br><br>
-          O <em>marcador de raça parece ausente</em> da cobertura jornalística nesse período, ao menos de forma nomeada.
+          A <em>fricção de classe</em> surge como conflito central: o jargão se choca com o status socioeconômico do indivíduo. O vendedor de armas que menciona que a pessoa "tem cara de bandido mas apresenta documentos de engenheiro ou médico" sugere que o operador fisionômico é neutralizado pelo capital cultural — o que revela sua lógica classista antes de qualquer coisa.
+          <br><br>
+          O <em>marcador de raça parece ausente</em> da cobertura jornalística nesse período, ao menos de forma nomeada. A expressão circula como descrição fenomenológica ou postura cênica.
         </p>
       </div>
       <div class="lav-zona">
@@ -423,7 +345,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   <div class="sedimento-bar"></div>
   <div class="estrato-inner">
     <p class="estrato-epoch">1990 – 1999</p>
-    <p class="geo-nota">estrato III · 11 matérias com fonte verificada · racialização implícita · primeira contestação</p>
+    <p class="geo-nota">estrato III · 17 matérias com fonte verificada · 1ª nomeação racial explícita com cor de pele (Wesley Snipes · cinema) · marcadores étnicos paralelos</p>
     <div class="termo-display tf-1990">cara de bandido</div>
     <p class="ocorrencias-label">matérias — passe o mouse · clique para acessar o original</p>
     <div class="ocorrencias-grid" id="grid-1990"></div>
@@ -431,27 +353,38 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo">Campo semântico</p>
         <p class="analise-texto">
-          Os anos 1990 parecem marcar uma <em>estetização urbana da criminalidade</em>. A expressão começa a migrar do contexto rural para as grandes cidades, incorporando noções de crueldade e esperteza atreladas ao espaço urbano.
+          Os anos 1990 apresentam a maior <em>complexidade analítica</em> do corpus inteiro — e o dado mais denso: a crítica de cinema de Rubens Ewald Filho sobre Wesley Snipes.
+        </p>
+        <div class="nota-destaque">
+          "Wesley Snipes tornou-se astro <em>apesar de ter cara de bandido e uma cor muito escura</em>, sem o menor jeito de galã — ao contrário de Denzel Washington."
+        </div>
+        <p class="analise-texto">
+          Essa é a <em>primeira nomeação racial explícita com marcador de cor de pele</em> identificada no corpus completo, e ela antecede em quase uma década a nomeação policial do BOPE. Mais do que isso: ela revela uma <em>estrutura colorista</em> por dentro da negritude. A comparação com Denzel Washington não é neutra — há uma hierarquia implícita entre o negro aceitável como galã (Denzel, de feições europeizadas) e o negro com "cara de bandido" (Wesley, "cor muito escura"). A expressão opera aqui como <em>operador colorista</em>, não apenas racial.
           <br><br>
-          A racialização ainda não é nomeada, mas pode ser lida como <em>estruturalmente implícita</em>. O corpo que recebe o jargão começa a ter endereço (a periferia, a favela) sem que o marcador racial apareça escrito.
+          O mesmo crítico usa, no mesmo período, "cara de bandido <em>polonês</em>" para Tcheky Karyo — mostrando que no registro cinematográfico europeu a expressão pode receber qualificadores étnicos sem âncora de cor de pele. A coluna política mobiliza "bandido <em>mexicano</em>" como adjetivo depreciativo para Ribamar, em oposição a Collor. Esses usos étnicos coexistem com a racialização negra sem se fundir a ela.
           <br><br>
-          O surgimento da <em>contestação popular</em> é um dado que chama atenção: o camelô que pergunta ao guarda-rapa "pra ser bandido precisava ter cara?" parece inaugurar uma disputa semântica com sujeitos periféricos questionando publicamente a validade da expressão.
+          Isso sugere que havia <em>dois regimes paralelos</em> nos anos 1990: um que operava sobre a negritude de forma explicitamente colorista (crítica de cinema sobre atores negros americanos), e outro que mobilizava marcadores étnicos genéricos desracializados (crítica sobre europeus, comentário político).
+          <br><br>
+          O surgimento da <em>contestação popular</em> é outro dado que chama atenção: o camelô que pergunta ao guarda-rapa "pra ser bandido precisava ter cara?" inaugura uma disputa semântica — sujeitos periféricos questionando publicamente a validade da expressão antes que a imprensa a nomeasse racialmente no campo policial.
         </p>
       </div>
       <div class="lav-zona">
         <svg viewBox="0 0 180 160" width="180" height="160">
           <rect x="20" y="30" width="60" height="60" rx="3" fill="#c8a878" opacity="0.25" stroke="#5a3a10" stroke-width="1.2"/>
-          <text x="50" y="67" text-anchor="middle" font-family="Special Elite,serif" font-size="8" fill="#3a2008">rural</text>
+          <text x="50" y="60" text-anchor="middle" font-family="Special Elite,serif" font-size="8" fill="#3a2008">cinema</text>
+          <text x="50" y="72" text-anchor="middle" font-family="Special Elite,serif" font-size="7" fill="#3a2008" opacity="0.7">rock · política</text>
           <path d="M83 60 Q100 60 105 60" stroke="#3a2008" stroke-width="1" fill="none" opacity="0.6" marker-end="url(#arw90)"/>
           <defs><marker id="arw90" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#3a2008" stroke-width="2"/></marker></defs>
           <circle cx="138" cy="60" r="32" fill="#a07838" opacity="0.2" stroke="#5a3010" stroke-width="1.5"/>
           <text x="138" y="57" text-anchor="middle" font-family="Special Elite,serif" font-size="8" fill="#2a1508">urbano</text>
-          <text x="138" y="70" text-anchor="middle" font-family="Special Elite,serif" font-size="7" fill="#2a1508" opacity="0.7">implícito</text>
-          <text x="90" y="120" text-anchor="middle" font-family="Playfair Display,serif" font-size="8" fill="#3a2008" font-style="italic" opacity="0.7">"precisava ter cara?"</text>
+          <text x="138" y="69" text-anchor="middle" font-family="Special Elite,serif" font-size="7" fill="#2a1508" opacity="0.7">implícito</text>
+          <circle cx="138" cy="60" r="14" fill="none" stroke="#c02000" stroke-width="1.2" stroke-dasharray="2,2" opacity="0.65"/>
+          <text x="138" y="84" text-anchor="middle" font-family="Special Elite,serif" font-size="6.5" fill="#c02000" opacity="0.8">Snipes ⚑</text>
+          <text x="90" y="120" text-anchor="middle" font-family="Playfair Display,serif" font-size="8" fill="#3a2008" font-style="italic" opacity="0.7">"cor muito escura"</text>
           <line x1="30" y1="130" x2="150" y2="130" stroke="#3a2008" stroke-width="0.5" opacity="0.3"/>
-          <text x="90" y="148" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#3a2008" opacity="0.4">primeira fissura semântica</text>
+          <text x="90" y="148" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#3a2008" opacity="0.4">1ª nomeação racial + cor · campo do cinema</text>
         </svg>
-        <p class="lav-label">forma em migração · racialização implícita</p>
+        <p class="lav-label">forma em migração · colorismo visível · cinema antes do campo policial</p>
       </div>
     </div>
   </div>
@@ -462,7 +395,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   <div class="sedimento-bar"></div>
   <div class="estrato-inner">
     <p class="estrato-epoch">2000 – 2009</p>
-    <p class="geo-nota">estrato IV · 7 matérias com fonte verificada · 1ª nomeação racial explícita · territorialização</p>
+    <p class="geo-nota">estrato IV · 11 matérias com fonte verificada · 1ª nomeação racial explícita no campo policial · inversão do olhar · territorialização</p>
     <div class="termo-display tf-2000" style="color:#f0d8a0">cara de bandido</div>
     <p class="ocorrencias-label" style="opacity:0.6">matérias — passe o mouse · clique para acessar o original</p>
     <div class="ocorrencias-grid" id="grid-2000"></div>
@@ -470,11 +403,13 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo" style="opacity:0.6">Campo semântico</p>
         <p class="analise-texto" style="color:#f0d090">
-          Os anos 2000 parecem apontar para uma <em>consolidação da literalização visual racializada</em>. A primeira nomeação racial explícita do corpus aparece aqui: moradores denunciam o modus operandi do BOPE — "maioria negra" — como critério de triagem policial em festa junina na favela.
+          Os anos 2000 trazem um dado de <em>inversão analítica</em> que merece atenção especial: na cobertura da Chacina do Morro do Zinco, sobreviventes relatam que os criminosos selecionavam para execução aqueles que tinham "cara de bandido". A expressão deixa de ser critério de suspeição policial-midiática e aparece como <em>critério de seleção de vítimas por uma facção criminosa</em>. O estigma penetrou tão fundo que se tornou operador de triagem dentro da própria violência que deveria nomear. Os dois lados da violência compartilham o mesmo instrumento fisionômico.
           <br><br>
-          O que o corpus sugere é um processo de <em>territorialização do estigma</em>: a favela e a violência urbana parecem ancorar cada vez mais a expressão em corpos negros na cobertura jornalística, seja para justificar ações de coerção ou para naturalizar o medo coletivo.
+          A <em>primeira nomeação racial explícita no campo policial</em> aparece aqui: morador denuncia que o BOPE selecionou para revista, em festa junina na favela, pessoas que tinham "cara de bandido, maioria negra". O espaço da favela funciona como ancoragem territorial que sedimenta a expressão em corpos racializados.
           <br><br>
-          O caso Alessandro pode apontar para algo curioso: o corpo ameaçador racializado recodificado como vantagem esportiva <em>"com sua cara de bandido de filme do velho oeste"</em>, o que sugere que o estigma permanece, mas seu sinal é invertido na narrativa atlética.
+          O caso Alessandro (Botafogo, negro) mostra a outra face: o corpo racializado recodificado como <em>capital atlético</em> — "sua cara de bandido de filme do velho oeste" como atributo de intimidação no esporte. O estigma permanece, mas seu sinal é invertido na narrativa esportiva.
+          <br><br>
+          Ao mesmo tempo, Angelina Jolie ganha a expressão em contexto de entretenimento glamourizado, confirmando que o uso estético-cultural permanece <em>fluido e disponível à branquitude famosa</em> sem os custos que o mesmo jargão impõe em outros contextos.
         </p>
       </div>
       <div class="lav-zona">
@@ -485,7 +420,8 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
           <ellipse cx="108" cy="60" rx="8" ry="5" fill="#f0c090" opacity="0.25"/>
           <path d="M73 85 Q90 95 107 85" fill="none" stroke="#f0c090" stroke-width="1" opacity="0.2"/>
           <text x="90" y="76" text-anchor="middle" font-family="Bebas Neue,sans-serif" font-size="11" fill="#c03010" letter-spacing="2" opacity="0.9">MAIORIA NEGRA</text>
-          <text x="90" y="145" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#f0c090" opacity="0.5" font-style="italic">1ª nomeação racial explícita · BOPE · favela</text>
+          <text x="90" y="140" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#f0c090" opacity="0.5" font-style="italic">1ª nomeação policial explícita · BOPE · favela</text>
+          <text x="90" y="153" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#f0c090" opacity="0.4" font-style="italic">inversão: critério de execução intracomunitária</text>
         </svg>
         <p class="lav-label" style="color:#f0d090;opacity:0.5">o círculo negro — forma que já é o lobo</p>
       </div>
@@ -498,7 +434,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   <div class="sedimento-bar"></div>
   <div class="estrato-inner">
     <p class="estrato-epoch" style="color:#e0c090;opacity:0.5">2010 – 2019</p>
-    <p class="geo-nota" style="color:#e0c090;opacity:0.35">estrato V · 2 matérias com fonte verificada · saturação · espectro de não-branquitude</p>
+    <p class="geo-nota" style="color:#e0c090;opacity:0.35">estrato V · 4 matérias com fonte verificada · saturação · espectro de não-branquitude</p>
     <div class="termo-display tf-2010" style="color:#ff4020">cara de bandido</div>
     <p class="ocorrencias-label" style="color:#e0b080;opacity:0.6">matérias — passe o mouse · clique para acessar o original</p>
     <div class="ocorrencias-grid" id="grid-2010"></div>
@@ -506,11 +442,13 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <div class="analise-bloco">
         <p class="analise-titulo" style="color:#e0c090;opacity:0.5">Campo semântico</p>
         <p class="analise-texto" style="color:#e0c090">
-          O corpus dos anos 2010 sugere que o universo semântico já se encontra <em>plenamente sedimentado</em>. O jargão parece circular sob a matriz racial de forma naturalizada, transbordando o campo policial para outras esferas: mídia de entretenimento, colunismo social.
+          O corpus dos anos 2010 sugere que o universo semântico já se encontra <em>plenamente sedimentado</em>. O jargão circula sob a matriz racial de forma naturalizada, transbordando o campo policial para outras esferas: mídia de entretenimento, colunismo social.
           <br><br>
-          O caso Paolo Guerrero aponta para algo relevante: a expressão pode operar como <em>categoria estética de alteridade genérica</em>, não especificamente negra, mas não-branco-europeu. O jogador ativa isso pela sua latinidade andina, pela aparência "exótica" para o padrão midiático brasileiro dominante.
+          O caso Paolo Guerrero aponta para algo relevante: a expressão pode operar como <em>categoria estética de alteridade genérica</em>, não exclusivamente negra, mas não-branco-europeu. Guerrero, peruano, de descendência indígena andina, ativa o mesmo operador semântico sem ser negro. O que a expressão marca, nesses casos, é uma latinidade não-branca percebida como ameaçadoramente exótica para o padrão midiático brasileiro dominante.
           <br><br>
-          O que o conjunto sugere é que a expressão <em>não colapsa em "negro" de forma exclusiva</em>: parece operar sobre um espectro de não-branquitude, com a negritude sendo o polo mais intensamente marcado, mas não o único.
+          O que o conjunto sugere é que a expressão <em>não colapsa em "negro" de forma exclusiva</em>: ela opera sobre um espectro de não-branquitude, com a negritude sendo o polo mais intensamente marcado — especialmente no regime policial — mas não o único. O uso estético-cultural mantém uma alteridade mais fluida, disponível inclusive a brancos, como Angelina Jolie ou Vince Vaughn, sem custo.
+          <br><br>
+          Há dois regimes que coexistem até o final do corpus: o <em>regime policial-racial</em> (que ancora a expressão em corpos negros e espaços periféricos) e o <em>regime estético-cultural</em> (que a mantém fluida, desracializada, disponível como atributo de dureza masculina genérica). A coexistência desses regimes é o que permite negar o preconceito — sempre é possível recorrer ao segundo para desacreditar o primeiro.
         </p>
       </div>
       <div class="lav-zona">
@@ -526,7 +464,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
           <text x="90" y="130" text-anchor="middle" font-family="Playfair Display,serif" font-size="7" fill="#e0a060" opacity="0.5" font-style="italic">← polo mais marcado · menos marcado →</text>
           <line x1="10" y1="120" x2="175" y2="120" stroke="#604030" stroke-width="0.4" opacity="0.3"/>
         </svg>
-        <p class="lav-label" style="color:#e0c090;opacity:0.4">espectro de não-branquitude · branco ausente</p>
+        <p class="lav-label" style="color:#e0c090;opacity:0.4">espectro de não-branquitude · branco ausente do polo policial</p>
       </div>
     </div>
   </div>
@@ -537,31 +475,27 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   <p class="rodape-texto">
     Este mapeamento nasceu de uma pergunta: quando e como a imprensa brasileira foi ancorando a expressão "cara de bandido" a corpos específicos? Para respondê-la de forma documental, recorreu-se ao acervo da Hemeroteca Digital Brasileira, plataforma gerida pela Fundação Biblioteca Nacional, cujas ferramentas de busca por OCR permitem o rastreamento de expressões na imprensa histórica com precisão textual.
     <br><br>
-    O corpus foi constituído por dois periódicos de relevância e capilaridade editorial: o Jornal do Brasil (RJ) e A Tribuna (SP). O recorte temporal foi determinado pela disponibilidade do acervo em cada periódico — 1980 a 2019 —, organizado por décadas.
+    O corpus foi constituído por dois periódicos: o Jornal do Brasil (RJ) e A Tribuna (SP). O recorte temporal foi determinado pela disponibilidade do acervo — 1980 a 2019 —, organizado por décadas.
     <br><br>
     A busca foi realizada pela expressão exata entre aspas: <em>"cara de bandido"</em>. "Cara de bandido" é diferente de "cara que parece de bandido". O <em>de</em> é o que torna a expressão um veredito fisionômico. Sem ele, o sintagma perde sua força atributiva.
     <br><br>
-    A plataforma retornou algumas ocorrências além das aqui mapeadas. Após leitura individual, essas foram descartadas: continham os termos separados ou em construções onde a expressão exata não se formava. Apenas as ocorrências com o sintagma íntegro foram incluídas.
+    Algumas ocorrências retornadas foram descartadas após leitura individual: continham os termos separados ou em construções onde a expressão exata não se formava. Apenas as ocorrências com o sintagma íntegro foram incluídas. 39 matérias analisadas. Duas fontes. Quatro décadas.
     <br><br>
-    Este levantamento não pretende ser exaustivo nem conclusivo. O que os fragmentos sugerem é um percurso, um acúmulo de sentido que pode apontar para uma sedimentação semântica ao longo do tempo.
+    Este levantamento não pretende ser exaustivo nem conclusivo. O que os fragmentos sugerem é um percurso — um acúmulo de sentido que pode apontar para uma sedimentação semântica ao longo do tempo.
     <br><br>
     Documentos originais: Hemeroteca Digital Brasileira · Fundação Biblioteca Nacional · <a href="https://memoria.bn.gov.br" style="color:#c0a878;opacity:0.7">memoria.bn.gov.br</a>
   </p>
 </div>
 
 <script>
-/* ══════════════════════════════════════════════
-   BARRA DE SCROLL
-══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════ SCROLL BAR */
 window.addEventListener('scroll', () => {
   const h = document.documentElement;
   const pct = (h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight);
   document.getElementById('sd').style.width = (pct * 100) + '%';
 });
 
-/* ══════════════════════════════════════════════
-   TOOLTIP
-══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════ TOOLTIP */
 let activeTooltip = null;
 function posTooltip(tt, e) {
   if (window.innerWidth <= 768) return;
@@ -575,61 +509,72 @@ function posTooltip(tt, e) {
   tt.style.top = y + 'px';
 }
 
-/* ══════════════════════════════════════════════
-   DADOS
-══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════ DADOS */
 const dados = {
   '1980': {
     cor: { borda: '#5a4a20', fill: '#c8a850', hover: '#8a6a30' },
     itens: [
       { meta: 'JB · Libanês confessa e inocenta Mofarrej', texto: 'Salim Yacoub Nehme confessa sequestro. Miguel Mofarrej descreve sequestrador: "falava castelhano, era magro, alto e cara de bandido." Uso puramente fisionômico. Nenhum marcador racial.', racial: '∅ racial · fisionomia descritiva', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_10&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20198&hf=memoria.bn.gov.br&pagfis=40070' },
-      { meta: 'JB · A luta contra a violência — porte de arma', texto: '"Muitas vezes a pessoa tem cara de bandido, mas apresenta documentos de engenheiro ou médico." Fricção de classe: o capital cultural neutraliza o jargão fisionômico.', racial: '∅ racial · classe explícita', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_10&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20198&hf=memoria.bn.gov.br&pagfis=121007' },
+      { meta: 'JB · A luta contra a violência — porte de arma', texto: '"Muitas vezes a pessoa tem cara de bandido, mas apresenta documentos de engenheiro ou médico." Fricção de classe: o capital cultural neutraliza o jargão fisionômico. O operador é classista antes de ser racial.', racial: '∅ racial · classe explícita', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_10&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20198&hf=memoria.bn.gov.br&pagfis=121007' },
       { meta: 'JB · Rock, a estética do caos', texto: 'Rock brasileiro. A expressão orbita a rebeldia contracultural. "Cara de bandido" como postura estética com apropriação pela branquitude jovem urbana.', racial: '∅ racial · estética contracultural', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_10&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20198&hf=memoria.bn.gov.br&pagfis=161898' },
       { meta: 'JB · A maturidade da ovelha negra', texto: 'Contexto de rock brasileiro e estética do desvio. A expressão como capital visual de anticonformismo juvenil.', racial: '∅ racial · subcultural', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_10&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20198&hf=memoria.bn.gov.br&pagfis=165120' },
       { meta: 'JB · Adeus às armas — Rita Lee & Roberto Carlos', texto: 'Show no Maracanazinho. A expressão associada ao universo rock como qualidade cênica de rebeldia performática.', racial: '∅ racial · performance musical', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_10&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20198&hf=memoria.bn.gov.br&pagfis=179024' },
       { meta: 'JB · Ocorrência 6 · 1980s', texto: 'Ocorrência em contexto cultural ou de crônica urbana da década. Uso descritivo genérico.', racial: '∅ racial', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_10&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20198&hf=memoria.bn.gov.br&pagfis=217882' },
+      { meta: 'A Tribuna · Erasmo Carlos / Jovem Guarda', texto: 'Cobertura de show de Erasmo Carlos sobre a história da Jovem Guarda. Uso da expressão em registro musical, associado à identidade transgressora do movimento jovem dos anos 60-80.', racial: '∅ racial · estética jovem-guarda', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_06&pasta=ano%20198&pesq=%22cara%20de%20bandido%22&pagfis=57639' },
+      { meta: 'A Tribuna · Ivan Candido — ator branco escalado para papel de bandido', texto: 'Ator branco que "cismaram que tinha cara de bandido" e era escalado para esses papéis em série nas novelas. No final de "O Outro" interpretaria outro tipo. Documenta tipologia cinematográfica completamente desracializada: o durão físico genérico, disponível à branquitude como atributo cênico.', racial: '∅ racial · tipologia cinematográfica branca · capital cênico sem custo', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_06&pasta=ano%20198&pesq=%22cara%20de%20bandido%22&pagfis=94250' },
+      { meta: 'A Tribuna · Rita Lee perde o bonde do rock tupiniquim', texto: '"Rockeiro brasileiro sempre teve cara de bandido e nem por brincadeira sonhava em ser tocado nas rádios." A expressão como capital contracultural de marginalidade estética do rock nacional.', racial: '∅ racial · contracultural · rock', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_06&pasta=ano%20198&pesq=%22cara%20de%20bandido%22&pagfis=110871' },
     ]
   },
   '1990': {
     cor: { borda: '#6a4010', fill: '#a07030', hover: '#7a5020' },
     itens: [
       { meta: 'JB · Agonia e Glória — filme de ação', texto: 'Lee Marvin (branco), herói interpretando sargento: "cara de bandido" como qualidade do herói masculino. Capital de masculinidade perigosa disponível à branquitude.', racial: '∅ racial · masculinidade branca', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=15621' },
-      { meta: 'JB · Os réus: tarde no Presídio de Rio Branco', texto: 'Oloci Alves (branco), irmão de Darcy, assassino de Chico Mendes: "cara de bandido moderno/mais urbano e crueldade e esperteza mais da cidade do que da roça." Primeira semântica de modernidade urbana.', racial: '∅ racial · branco · rural→urbano', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=28463' },
-      { meta: 'JB · Brizola hostilizado por grupo de camelôs', texto: 'Camelô ao guarda-rapa: "se não me deixar trabalhar, saquearei mercados." Resposta: "não tem cara de bandido." Camelô: "pra ser bandido precisava ter cara?" primeira contestação popular direta da validade estética do jargão.', racial: '∅ racial · contestação periférica explícita · ruptura semântica', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=29415' },
+      { meta: 'JB · Os réus: tarde no Presídio de Rio Branco', texto: 'Oloci Alves (branco), irmão de Darcy, assassino de Chico Mendes: "cara de bandido moderno/mais urbano e crueldade e esperteza mais da cidade do que da roça." Primeira semântica de modernidade urbana — ainda sem marcador racial.', racial: '∅ racial · branco · rural→urbano', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=28463' },
+      { meta: 'JB · Brizola hostilizado por grupo de camelôs', texto: 'Camelô ao guarda-rapa: "se não me deixar trabalhar, saquearei mercados." Resposta: "não tem cara de bandido." Camelô: "pra ser bandido precisava ter cara?" — primeira contestação popular direta da validade estética do jargão. Sujeito periférico desmontando o operador.', racial: '∅ racial · contestação periférica explícita · ruptura semântica', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=29415' },
       { meta: 'JB · Novo grito de rock da guerreira Rita', texto: 'Rita Lee. Cobertura de show. Uso estético-cultural: cara de bandido como atributo cênico de rock transgressor.', racial: '∅ racial · rock', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=50870' },
       { meta: 'JB · O mito do Raulzito', texto: 'Raul Seixas. A expressão como capital estético de rock transgressor brasileiro.', racial: '∅ racial · rock', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=63996' },
-      { meta: 'JB · Funk também é cultura', texto: 'Cobertura de funk. A expressão começa a orbitar a periferia urbana sem nomear a raça explicitamente.', racial: 'implícito leve · periferia', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=77112' },
+      { meta: 'JB · Funk também é cultura', texto: 'Cobertura de funk. A expressão começa a orbitar a periferia urbana sem nomear a raça explicitamente. Implícito estrutural.', racial: 'implícito leve · periferia urbana', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=77112' },
       { meta: 'JB · Rita Lee Spin Doctors', texto: 'Cobertura de show e contexto pop-rock. Uso estético-cultural.', racial: '∅ racial', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=94964' },
       { meta: 'JB · Popeiros brasileiros tinham cara de bandido', texto: '"Popeiros brasileiros tinham cara de bandido", uso estético em contexto de cobertura de música pop nacional.', racial: '∅ racial · estética pop', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=99639' },
       { meta: 'JB · O impacto dos velhos tempos — Hebert, Barone e Bi', texto: 'Contexto político. Uso descritivo da expressão em cobertura de cena política urbana.', racial: '∅ racial', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=239628' },
       { meta: 'JB · Ocorrência 10 — 1990s', texto: 'Ocorrência em contexto de violência urbana. Racialização estruturalmente implícita mas ainda sem nomeação.', racial: 'implícito · periferia urbana', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=330354' },
-      { meta: 'JB · Ocorrência 11 — 1990s', texto: 'Ocorrência em contexto de segurança pública. Uso em contexto de crônica ou reportagem de violência urbana.', racial: 'implícito', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=330354' },
+      { meta: 'JB · Ocorrência 11 — 1990s', texto: 'Ocorrência em contexto de segurança pública. Uso em crônica ou reportagem de violência urbana.', racial: 'implícito', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_11&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20199&hf=memoria.bn.gov.br&pagfis=330354' },
+      { meta: 'A Tribuna · Diário da Corte — Collor e Ribamar', texto: '"Collor não tem cara de bandido mexicano como Ribamar." A expressão recebe qualificador nacional-étnico ("mexicano") como adjetivo depreciativo em contexto político. Uso paralelo ao registro racial, sem âncora de cor de pele.', racial: '∅ racial negro · étnico-nacional · uso político · "bandido mexicano"', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_07&pasta=ano%20199&pesq=%22cara%20de%20bandido%22&pagfis=40788' },
+      { meta: 'A Tribuna · Robin Hood — versões Costner e Errol Flynn', texto: 'Patrick Borgain (branco), galã, descrito como "um pouco mais velho e com cara de bandido." Uso descritivo de envelhecimento masculino como deslocamento para o tipo ameaçador genérico. Sem custo.', racial: '∅ racial · masculinidade europeia · galã envelhecido', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_07&pasta=ano%20199&pesq=%22cara%20de%20bandido%22&pagfis=51071' },
+      { meta: 'A Tribuna · Bruna Lombardi entrevista Oliver Stone (Bruna & Show)', texto: 'Oliver Stone descrito como tendo "cara de bandido" em coluna de entretenimento. Uso adjetivo genérico aplicado a realizador branco famoso. A expressão circula no registro cultural sem qualquer custo reputacional.', racial: '∅ racial · celebridade branca · custo zero', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_07&pasta=ano%20199&pesq=%22cara%20de%20bandido%22&pagfis=53039' },
+      { meta: 'A Tribuna · Wesley Snipes é o novo astro negro ⚑', texto: 'Rubens Ewald Filho: Wesley Snipes tornou-se astro "apesar de ter cara de bandido e uma cor muito escura, sem o menor jeito de galã — ao contrário de Denzel Washington." 1ª nomeação racial explícita com marcador de cor de pele em todo o corpus. Revela estrutura colorista: negro aceitável como galã (Denzel, feições europeizadas) vs. negro com "cara de bandido" (Wesley, "cor muito escura"). Operador colorista antes de policial.', racial: '⚑ 1ª NOMEAÇÃO RACIAL + COR DE PELE · colorismo · cinema · antecede BOPE em quase uma década', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_07&pasta=ano%20199&pesq=%22cara%20de%20bandido%22&pagfis=71910' },
+      { meta: 'A Tribuna · Tocaia (Rubens Ewald Filho) — Tcheky Karyo', texto: 'Tcheky Karyo: "cara de bandido polonês" — feio, sem charme, erro de casting para sedutor. Mesmo crítico que usou a expressão sobre Snipes mobiliza aqui marcador étnico-europeu em registro completamente diferente. Mesmo autor, dois repertórios separados por raça.', racial: '∅ racial negro · étnico-europeu · "bandido polonês" · contraste com uso sobre Snipes', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_07&pasta=ano%20199&pesq=%22cara%20de%20bandido%22&pagfis=168854' },
+      { meta: 'A Tribuna · Entrevista com Rita Lee — a santa do rock', texto: '"Era do tempo que rockeiro brasileiro tinha cara de bandido." Uso retrospectivo e nostálgico: a expressão como marcador de uma época de marginalidade subcultural já superada pela institucionalização do gênero.', racial: '∅ racial · rock · uso retrospectivo · marginalidade superada', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_07&pasta=ano%20199&pesq=%22cara%20de%20bandido%22&pagfis=2572' },
     ]
   },
   '2000': {
     cor: { borda: '#801510', fill: '#3a0808', hover: '#c02010' },
     itens: [
-      { meta: 'JB · Quem assassinou a Flu FM? — Elias Maluco', texto: 'Carta ao editor: "por que não foi mostrada a cara de bandido procurado pra todo mundo ver?" demanda de visibilidade do estigma como performance punitiva pública.', racial: 'implícito · criminalidade negra midiática', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=196' },
-      { meta: 'JB · Protesto em Laranjeiras', texto: 'Jovem de 21 anos morto pela polícia. Cerca de 30 protestantes. Moradora: "todos tinham cara de bandido mesmo" voz periférica internalizando o estigma como argumento de defesa.', racial: 'implícito · internalização do estigma', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=76026' },
-      { meta: 'JB · BOPE acusado de abuso de poder ⚑', texto: 'BOPE invade festa junina na favela. Morador: pessoas passavam pela revista que tinham "cara de bandido, maioria negra." PRIMEIRA NOMEAÇÃO RACIAL EXPLÍCITA DO CORPUS DOCUMENTAL.', racial: '⚑ NOMEAÇÃO RACIAL EXPLÍCITA · BOPE · favela', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=78101' },
-      { meta: 'JB · A diferença está no gol — Alessandro (Botafogo)', texto: 'Ausência do jogador negro Alessandro por lesão: atemorizaria adversários "com sua cara de bandido de filme do velho oeste." Racialização estetizada como capital atlético.', racial: 'racial explícito estetizado · corpo negro = vantagem', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=115367' },
-      { meta: 'JB · Rita não envelhece', texto: 'Contexto de entretenimento. Uso da expressão em crônica cultural, naturalizado, sem explicação necessária.', racial: 'implícito naturalizado', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=189416' },
+      { meta: 'JB · Quem assassinou a Flu FM? — Elias Maluco', texto: 'Carta ao editor: "por que não foi mostrada a cara de bandido procurado pra todo mundo ver?" — demanda de visibilidade do estigma como performance punitiva pública. O público leitor já internalizou a expressão como instrumento de identificação de suspeitos.', racial: 'implícito · criminalidade negra midiática', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=196' },
+      { meta: 'JB · Protesto em Laranjeiras', texto: 'Jovem de 21 anos morto pela polícia. Cerca de 30 protestantes. Moradora: "todos tinham cara de bandido mesmo" — voz periférica internalizando o estigma como argumento de defesa do jovem morto. O estigma virou testemunho.', racial: 'implícito · internalização do estigma · voz periférica', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=76026' },
+      { meta: 'JB · BOPE acusado de abuso de poder ⚑', texto: 'BOPE invade festa junina na favela. Morador: pessoas passavam pela revista que tinham "cara de bandido, maioria negra." PRIMEIRA NOMEAÇÃO RACIAL EXPLÍCITA NO CAMPO POLICIAL DO CORPUS DOCUMENTAL.', racial: '⚑ 1ª NOMEAÇÃO RACIAL EXPLÍCITA NO CAMPO POLICIAL · BOPE · favela', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=78101' },
+      { meta: 'JB · A diferença está no gol — Alessandro (Botafogo)', texto: 'Ausência do jogador negro Alessandro por lesão: atemorizaria adversários "com sua cara de bandido de filme do velho oeste." Racialização estetizada como capital atlético. O estigma permanece, mas seu sinal é invertido na narrativa esportiva.', racial: 'racial explícito estetizado · corpo negro como capital intimidador · inversão de sinal', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=115367' },
+      { meta: 'JB · Rita não envelhece', texto: 'Contexto de entretenimento. Uso da expressão em crônica cultural, naturalizado, sem necessidade de qualificação.', racial: 'implícito naturalizado', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=189416' },
       { meta: 'JB · Artistas apoiam boicote a IPTU', texto: 'Contexto político-cultural. Uso da expressão em cobertura urbana, circulação naturalizada fora do campo estritamente policial.', racial: 'implícito', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=240804' },
       { meta: 'JB · Ocorrência 7 — 2000s', texto: 'Ocorrência em contexto de segurança pública ou crônica urbana.', racial: 'implícito naturalizado', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_12&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20200&hf=memoria.bn.gov.br&pagfis=251603' },
+      { meta: 'A Tribuna · Cinema — Angelina Jolie e Billy Bob Thompson', texto: '"Casal com cara de bandido" faz primeira aparição pública após casamento surpresa na première de 60 Segundos. Mulher branca famosa recebe a expressão em registro glamourizado sem custo reputacional. Confirma que o uso estético-cultural permanece fluido e disponível à branquitude.', racial: '∅ racial · celebridade branca · uso glamourizado · custo zero', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_08&pasta=ano%20200&pesq=%22cara%20de%20bandido%22&pagfis=8249' },
+      { meta: 'A Tribuna · Rock: a vitamina dos anos 80', texto: 'Matéria sobre trajetória do rock cita Rita Lee: "rockeiro sempre teve cara de bandido, até que começou a aparecer nos cinemas, na primeira edição do Rock in Rio." A expressão como marco de uma estigmatização cultural superada pela institucionalização do gênero musical.', racial: '∅ racial · rock · uso historicizante', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_08&pasta=ano%20200&pesq=%22cara%20de%20bandido%22&pagfis=13740' },
+      { meta: 'A Tribuna · Sobreviventes da Chacina do Morro do Zinco ⚑', texto: 'Van com pessoas indo a uma festa promovida por facção se perde e é rendida por criminosos. Seis mortos após "julgamento no qual quem tinha cara de bandido foi executado." INVERSÃO DO OLHAR: a expressão opera não como critério de suspeição pelo Estado, mas como critério de seleção de vítimas pela própria violência. O estigma penetrou nos dois lados. O operador fisionômico é compartilhado.', racial: '⚑ USO LITERAL COMO CRITÉRIO DE EXECUÇÃO · inversão do olhar · violência intracomunitária · estigma bidirecional', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_08&pasta=ano%20200&pesq=%22cara%20de%20bandido%22&pagfis=105387' },
+      { meta: 'A Tribuna · Penetras Bons de Bico — Rubens Ewald Filho', texto: 'Vince Vaughn: "cara de bandido, mas parece ter encontrado seu lugar nas comédias." Ator branco americano: a expressão como atributo físico que o gênero cômico neutraliza. Mesmo operador semântico, custo social radicalmente diferente do que quando aplicado a corpos racializados.', racial: '∅ racial · celebridade branca · neutralização cômica · assimetria de custo', url: 'https://memoria.bn.gov.br/DocReader/docreader.aspx?bib=153931_08&pasta=ano%20200&pesq=%22cara%20de%20bandido%22&pagfis=74276' },
     ]
   },
   '2010': {
     cor: { borda: '#c03010', fill: '#200505', hover: '#e02010' },
     itens: [
-      { meta: 'A Tribuna (SP) · Monique Evans sobre affair da filha', texto: 'Sobre Paolo Guerrero: "ele tinha cara de bandido? porque era assim que a filha gostava." A expressão opera como qualificador estético de alteridade andina. Latinidade não-branca ativa o mesmo operador semântico do corpo negro.', racial: 'latinidade andina · não-branquitude · alteridade estética', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=153931_09&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20201&hf=memoria.bn.gov.br&pagfis=15907' },
-      { meta: "A Tribuna (SP) · E o rock n'roll se reinventa", texto: 'Uso estético-musical. A expressão sobrevive no campo do rock como dado completamente naturalizado, sem necessidade de qualificação ou explicação.', racial: 'implícito naturalizado · saturação semântica', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=153931_09&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20201&hf=memoria.bn.gov.br&pagfis=122354' },
+      { meta: 'A Tribuna (SP) · Monique Evans sobre affair da filha', texto: 'Sobre Paolo Guerrero (peruano, descendência indígena andina): "ele tinha cara de bandido? porque era assim que a filha gostava." A expressão opera como qualificador de alteridade latinoandina — não especificamente negra, mas não-branco-europeu. Ativa o mesmo operador semântico do campo racial sem ser racialmente negro.', racial: 'latinidade andina · não-branquitude · alteridade estética · ≠ negro mas ≠ branco', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=153931_09&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20201&hf=memoria.bn.gov.br&pagfis=15907' },
+      { meta: "A Tribuna (SP) · E o rock n'roll se reinventa", texto: 'Uso estético-musical. A expressão sobrevive no campo do rock como dado completamente naturalizado, sem necessidade de qualificação ou explicação. Saturação semântica: o jargão circula em registros opostos simultaneamente.', racial: 'implícito naturalizado · saturação semântica · dois regimes coexistem', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=153931_09&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20201&hf=memoria.bn.gov.br&pagfis=122354' },
+      { meta: 'JB · E o rock n\'roll se reinventa — 2010s JB', texto: 'Contexto musical. Uso estético naturalizado. A expressão circula sem explicação no campo cultural.', racial: 'implícito naturalizado', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_13&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20201&hf=memoria.bn.gov.br&pagfis=1' },
+      { meta: 'JB · Ocorrência 2 — 2010s JB', texto: 'Ocorrência em contexto de entretenimento ou colunismo social. A expressão circula de forma naturalizada no registro cultural, sem necessidade de explicação.', racial: 'implícito naturalizado · saturação', url: 'https://memoria.bn.gov.br/DocReader/DocReader.aspx?bib=030015_13&pesq=%22CARA%20DE%20BANDIDO%22&pasta=ano%20201&hf=memoria.bn.gov.br&pagfis=2' },
     ]
   }
 };
 
-/* ══════════════════════════════════════════════
-   CONSTRUÇÃO DOS GRIDS
-══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════ CONSTRUÇÃO DOS GRIDS */
 Object.keys(dados).forEach(dec => {
   const grid = document.getElementById('grid-' + dec);
   const { cor, itens } = dados[dec];
@@ -641,7 +586,7 @@ Object.keys(dados).forEach(dec => {
     el.rel = 'noopener noreferrer';
     el.style.background = cor.fill;
     el.style.borderColor = cor.borda;
-    if (item.racial.startsWith('⚑')) el.style.boxShadow = '0 0 0 2px #ff2000';
+    if (item.racial.startsWith('⚑')) el.style.boxShadow = '0 0 0 2px #ff2000, 0 0 8px rgba(255,32,0,0.4)';
     const tt = document.createElement('div');
     tt.className = 'frag-tooltip';
     tt.innerHTML = `<div class="frag-tooltip-meta">${item.meta}</div><div class="frag-tooltip-text">${item.texto}</div><div class="frag-tooltip-racial">${item.racial}</div><div class="frag-tooltip-link">↗ clique para abrir o original na Hemeroteca Digital</div>`;
@@ -659,14 +604,12 @@ Object.keys(dados).forEach(dec => {
   });
 });
 
-/* ══════════════════════════════════════════════
-   2. PAINEL CHUVA (SEDIMENTAÇÃO)
-══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════ PAINEL CHUVA */
 const RP = document.getElementById('rp');
 const rpCounter = document.getElementById('rp-counter');
 const SQ = 13, GAP = 3, STEP = SQ + GAP;
 const PANEL_W = 62;
-const COLS = Math.floor((PANEL_W - 4) / STEP); // ≈ 3
+const COLS = Math.floor((PANEL_W - 4) / STEP);
 let slotIdx = 0;
 let totalDropped = 0;
 const MAX_SLOTS = COLS * Math.floor(window.innerHeight / STEP);
@@ -676,10 +619,7 @@ function getSlotPos(idx) {
   const row = Math.floor(idx / COLS);
   const totalX = COLS * STEP;
   const startX = Math.floor((PANEL_W - totalX) / 2);
-  return {
-    x: startX + col * STEP,
-    y: window.innerHeight - (row + 1) * STEP - 2
-  };
+  return { x: startX + col * STEP, y: window.innerHeight - (row + 1) * STEP - 2 };
 }
 
 function dropSquares(decKey) {
@@ -687,9 +627,8 @@ function dropSquares(decKey) {
   const dec = dados[decKey];
   if (!dec) return;
   const { cor, itens } = dec;
-
   itens.forEach((item, i) => {
-    const delay = i * 130 + Math.random() * 70;
+    const delay = i * 120 + Math.random() * 60;
     setTimeout(() => {
       if (slotIdx >= MAX_SLOTS) return;
       const sq = document.createElement('div');
@@ -698,37 +637,21 @@ function dropSquares(decKey) {
       sq.style.height = SQ + 'px';
       sq.style.background = cor.fill;
       sq.style.borderColor = cor.borda;
-      if (item.racial.startsWith('⚑')) {
-        sq.style.boxShadow = '0 0 0 2px #ff2000, 0 0 8px rgba(255,32,0,0.4)';
-      }
-
+      if (item.racial.startsWith('⚑')) sq.style.boxShadow = '0 0 0 2px #ff2000, 0 0 8px rgba(255,32,0,0.4)';
       const pos = getSlotPos(slotIdx++);
       sq.style.left = pos.x + 'px';
       sq.style.top = '-20px';
       sq.style.transitionDuration = (0.45 + Math.random() * 0.55) + 's';
-
       RP.appendChild(sq);
-
-      // duplo rAF garante que o navegador pinte a posição inicial antes de animar
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          sq.style.top = pos.y + 'px';
-        });
-      });
-
-      // atualiza contador
+      requestAnimationFrame(() => { requestAnimationFrame(() => { sq.style.top = pos.y + 'px'; }); });
       totalDropped++;
       rpCounter.textContent = totalDropped;
     }, delay);
   });
 }
 
-/* ══════════════════════════════════════════════
-   1. PALAVRA CINÉTICA
-══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════ PALAVRA CINÉTICA */
 const kw = document.getElementById('kw');
-
-// estados por era (0=intro, 1=1980, 2=1990, 3=2000, 4=2010)
 const kwStates = [
   { ff: "'UnifrakturMaguntia', serif", sz: 'clamp(2.5rem,5.5vw,4.8rem)', op: 0.055, col: '#c8b890', ls: '0.02em' },
   { ff: "'Playfair Display', serif", sz: 'clamp(3rem,6.5vw,5.8rem)', op: 0.08, col: '#b09060', ls: '0.01em' },
@@ -736,28 +659,23 @@ const kwStates = [
   { ff: "'Bebas Neue', sans-serif", sz: 'clamp(4rem,9.5vw,9rem)', op: 0.145, col: '#8a1a00', ls: '0.10em' },
   { ff: "'Oswald', sans-serif", sz: 'clamp(4.5rem,11vw,11rem)', op: 0.20, col: '#c51200', ls: '0.16em' },
 ];
-
 function applyKwState(idx) {
   const s = kwStates[Math.min(idx, kwStates.length - 1)];
-  // font-family snaps (sem transição entre famílias tipográficas)
   kw.style.fontFamily = s.ff;
-  // os demais atributos interpolam via CSS transition
   kw.style.fontSize = s.sz;
   kw.style.opacity = s.op;
   kw.style.color = s.col;
   kw.style.letterSpacing = s.ls;
 }
 
-/* ══════════════════════════════════════════════
-   3. SVG METAMORFOSE
-══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════ SVG METAMORFOSE */
 const svStates = document.querySelectorAll('.sv-state');
 const svLabels = [
   'forma neutra · sem marcador',
-  'classe divide · raça ausente ∅',
-  'racialização implícita · fissura semântica',
-  '1ª nomeação racial explícita · BOPE · favela',
-  'saturação · espectro de não-branquitude',
+  'classe divide · raça ausente ∅ · tipologia cinematográfica',
+  '1ª nomeação racial + cor de pele (Snipes · cinema) · colorismo visível',
+  '1ª nomeação racial no campo policial · BOPE · inversão do olhar',
+  'saturação · espectro de não-branquitude · dois regimes coexistem',
 ];
 const eraBadges = ['pré-corpus', '1980 – 1989', '1990 – 1999', '2000 – 2009', '2010 – 2019'];
 const msvLabel = document.getElementById('msv-label');
@@ -769,17 +687,14 @@ function activateSvState(idx) {
   if (msvBadge) msvBadge.textContent = eraBadges[idx] || '';
 }
 
-/* ══════════════════════════════════════════════
-   INTERSECTION OBSERVER — coordena os três
-══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════ INTERSECTION OBSERVER */
 const eraConfig = {
   'e-intro': { era: 0 },
-  'e-1980':  { era: 1, decKey: '1980' },
-  'e-1990':  { era: 2, decKey: '1990' },
-  'e-2000':  { era: 3, decKey: '2000' },
-  'e-2010':  { era: 4, decKey: '2010' },
+  'e-1980': { era: 1, decKey: '1980' },
+  'e-1990': { era: 2, decKey: '1990' },
+  'e-2000': { era: 3, decKey: '2000' },
+  'e-2010': { era: 4, decKey: '2010' },
 };
-
 const triggered = new Set();
 const sectionIds = ['e-intro', 'e-1980', 'e-1990', 'e-2000', 'e-2010'];
 
@@ -789,27 +704,16 @@ const obs = new IntersectionObserver((entries) => {
     const id = entry.target.id;
     const cfg = eraConfig[id];
     if (!cfg) return;
-
-    // atualiza palavra cinética e SVG
     applyKwState(cfg.era);
     activateSvState(cfg.era);
-
-    // chuva de dados — dispara apenas uma vez por seção
     if (cfg.decKey && !triggered.has(id)) {
       triggered.add(id);
       dropSquares(cfg.decKey);
     }
   });
-}, {
-  // dispara quando o centro da seção entra no meio da janela
-  rootMargin: '-35% 0px -35% 0px',
-  threshold: 0
-});
+}, { rootMargin: '-35% 0px -35% 0px', threshold: 0 });
 
-sectionIds.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) obs.observe(el);
-});
+sectionIds.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
 
 document.addEventListener('touchstart', (e) => {
   if (activeTooltip && !e.target.closest('.ocorrencia-sq') && !e.target.closest('.frag-tooltip')) {
@@ -817,9 +721,10 @@ document.addEventListener('touchstart', (e) => {
     activeTooltip = null;
   }
 });
-// estado inicial
+
 applyKwState(0);
 activateSvState(0);
+
 if ('ontouchstart' in window) {
   const instr = document.querySelector('.obra-instrucao');
   if (instr) instr.textContent = '↓ role pelas camadas do tempo · toque nos quadrados para ler';
