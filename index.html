@@ -313,11 +313,9 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
       <text x="35" y="98" text-anchor="middle" font-family="Oswald,sans-serif" font-size="9.5" fill="#cc3010" opacity="0.85">polo</text>
       <circle cx="98" cy="88" r="24" fill="#200808" stroke="#c04020" stroke-width="1.8"/>
       <text x="98" y="92" text-anchor="middle" font-family="Oswald,sans-serif" font-size="8.5" fill="#e05030">latino</text>
-      <circle cx="148" cy="88" r="15" fill="#180606" stroke="#904020" stroke-width="1.2"/>
-      <text x="148" y="92" text-anchor="middle" font-family="Oswald,sans-serif" font-size="7.5" fill="#b04020">andino</text>
-      <circle cx="171" cy="88" r="7" fill="none" stroke="#604030" stroke-width="0.7" stroke-dasharray="2,2" opacity="0.36"/>
+      <circle cx="148" cy="88" r="7" fill="none" stroke="#604030" stroke-width="0.7" stroke-dasharray="2,2" opacity="0.36"/>
       <text x="88" y="138" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#5a1808" opacity="0.48" font-style="italic">← polo mais marcado · menos →</text>
-      <text x="88" y="175" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#5a1808" opacity="0.36">espectro de não-branquitude</text>
+      <text x="88" y="175" text-anchor="middle" font-family="Playfair Display,serif" font-size="10" fill="#5a1808" opacity="0.36">dois regimes · não um espectro</text>
     </g>
   </svg>
   <p id="msv-label">forma neutra · sem marcador</p>
@@ -520,7 +518,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
   <div class="sedimento-bar"></div>
   <div class="estrato-inner">
     <p class="estrato-epoch" style="color:#e0c090;opacity:0.5">2010 – 2019</p>
-    <p class="geo-nota" style="color:#e0c090;opacity:0.35">estrato V · 4 matérias com fonte verificada · saturação · espectro de não-branquitude</p>
+    <p class="geo-nota" style="color:#e0c090;opacity:0.35">estrato V · 4 matérias com fonte verificada · saturação · dois regimes · não um espectro</p>
     <div class="termo-display tf-2010" style="color:#ff4020">cara de bandido</div>
     <p class="ocorrencias-label" style="color:#e0b080;opacity:0.6">matérias — passe o mouse · clique para acessar o original</p>
     <div class="ocorrencias-grid" id="grid-2010"></div>
@@ -1081,9 +1079,8 @@ const splashSvgContents = [
    <text x="35" y="98" text-anchor="middle" font-family="Oswald,sans-serif" font-size="9" fill="#cc3010" opacity="0.85">polo</text>
    <circle cx="98" cy="88" r="24" fill="#200808" stroke="#c04020" stroke-width="2"/>
    <text x="98" y="92" text-anchor="middle" font-family="Oswald,sans-serif" font-size="8.5" fill="#e05030">latino</text>
-   <circle cx="148" cy="88" r="15" fill="#180606" stroke="#904020" stroke-width="1.5"/>
-   <text x="148" y="92" text-anchor="middle" font-family="Oswald,sans-serif" font-size="7.5" fill="#b04020">andino</text>
-   <text x="88" y="162" text-anchor="middle" font-family="Playfair Display,serif" font-size="9" fill="#5a1808" opacity="0.55" font-style="italic">espectro de não-branquitude</text>`
+   <circle cx="148" cy="88" r="7" fill="none" stroke="#604030" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.4"/>
+   <text x="88" y="162" text-anchor="middle" font-family="Playfair Display,serif" font-size="9" fill="#5a1808" opacity="0.55" font-style="italic">dois regimes · não um espectro</text>`
 ];
 
 function activateSvState(idx) {
@@ -1115,7 +1112,7 @@ function activateSvState(idx) {
       overlay.classList.remove('saindo');
       splashAtivo = false;
     }, 500);
-  }, 1400);
+  }, 3000);
 }
 
 /* ══════════════════════════════════════════════ INTERSECTION OBSERVER */
