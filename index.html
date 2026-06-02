@@ -206,7 +206,7 @@ body{background:#f5f0e8;color:#1a1208;font-family:'Special Elite',serif;overflow
 @media(max-width:600px){.leitor-card{padding:1.2rem}.leitor-txt{font-size:0.82rem}}
 #splash-overlay{
   position:fixed;inset:0;z-index:800;
-  background:#f5f0e8;
+  background:#e8e0d0;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   pointer-events:none;
   opacity:0;
@@ -1091,7 +1091,7 @@ function activateSvState(idx) {
   if (msvLabel) msvLabel.textContent = svLabels[idx] || '';
   if (msvBadge) msvBadge.textContent = eraBadges[idx] || '';
 
-  if (idx === ultimoIdx || splashAtivo) return;
+  if (idx === 0 || idx === ultimoIdx || splashAtivo) return;
   ultimoIdx = idx;
 
   const overlay = document.getElementById('splash-overlay');
@@ -1115,7 +1115,7 @@ function activateSvState(idx) {
       overlay.classList.remove('saindo');
       splashAtivo = false;
     }, 500);
-  }, 900);
+  }, 1400);
 }
 
 /* ══════════════════════════════════════════════ INTERSECTION OBSERVER */
